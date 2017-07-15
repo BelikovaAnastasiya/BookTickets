@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>CheckUser</servlet-name>
+        <servlet-class>classes.web.CheckUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckUser</servlet-name>
+        <url-pattern>/classes.web.CheckUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Registration</servlet-name>
+        <servlet-class>classes.web.Registration</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Registration</servlet-name>
+        <url-pattern>/classes.web.Registration</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddUser</servlet-name>
+        <servlet-class>classes.web.AddUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddUser</servlet-name>
+        <url-pattern>/classes.web.AddUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FindFilm</servlet-name>
+        <servlet-class>classes.web.FindFilm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FindFilm</servlet-name>
+        <url-pattern>/classes.web.FindFilm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SeeBooking</servlet-name>
+        <servlet-class>classes.web.SeeBooking</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SeeBooking</servlet-name>
+        <url-pattern>/classes.web.SeeBooking</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyProfile</servlet-name>
+        <servlet-class>classes.web.MyProfile</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyProfile</servlet-name>
+        <url-pattern>/classes.web.MyProfile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SeeReviews</servlet-name>
+        <servlet-class>classes.web.SeeReviews</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SeeReviews</servlet-name>
+        <url-pattern>/classes.web.SeeReviews</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AllMovies</servlet-name>
+        <servlet-class>classes.web.AllMovies</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AllMovies</servlet-name>
+        <url-pattern>/classes.web.AllMovies</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminAddUser</servlet-name>
+        <servlet-class>classes.web.AdminAddUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminAddUser</servlet-name>
+        <url-pattern>/classes.web.AdminAddUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddMovie</servlet-name>
+        <servlet-class>classes.web.AddMovie</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddMovie</servlet-name>
+        <url-pattern>/classes.web.AddMovie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SeeAllUsers</servlet-name>
+        <servlet-class>classes.web.SeeAllUsers</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SeeAllUsers</servlet-name>
+        <url-pattern>/classes.web.SeeAllUsers</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BenefitSystem</servlet-name>
+        <servlet-class>classes.web.BenefitSystem</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BenefitSystem</servlet-name>
+        <url-pattern>/classes.web.BenefitSystem</url-pattern>
+    </servlet-mapping>
+</web-app>

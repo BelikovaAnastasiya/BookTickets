@@ -1,0 +1,116 @@
+body {
+    color: #A52A2A;
+    font: 30px 'Kurale', serif;
+    background-color: #FFFACD;
+}
+
+input {
+    background-color: #F5F5DC;
+    border: 2px solid #A52A2A;
+    color: #A52A2A;
+    width: 200px;
+    height: 30px;
+    font: 20px 'Kurale', serif;
+}
+
+input[type="submit"] {
+    background-color: #F5F5DC;
+    border: 2px solid #A52A2A;
+    color: #A52A2A;
+    width: 200px;
+    height: 40px;
+    font: 20px 'Kurale', serif;
+    text-align: center;
+}
+
+form, h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+    color: #A52A2A;
+    font: 20px 'Kurale', serif;
+}
+
+img[id="error"]{
+    width: 60%;
+    height: 65%;
+    display:block;
+    margin:0 auto;
+}
+
+img[id="logo"]{
+    width: 30%;
+    height: 15%;
+}
+
+#wrapper {
+    max-width: 960px;
+    margin: auto;
+}
+
+
+header {
+    padding: 20px 0;
+}
+
+footer {
+    background: #A52A2A;
+    color: #F5F5DC;
+    font-size: 14px;
+}
+
+#footer {
+    max-width: 960px;
+    margin: auto;
+    padding: 10px 0;
+    height: 90px;
+}
+
+footer a {
+    color: #F5F5DC;
+}
+
+#sitemap {
+    margin-top:-15px;
+    width: 250px;
+    float: left;
+    padding-right: 15px;
+}
+
+#sitemap div {
+    margin-top: -5px;
+    display: inline-block;
+    padding-right: 15px;
+}
+
+#sitemap a {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 2px;
+
+}
+
+
+#sitemap a:hover {
+    text-decoration: underline;
+}
+
+
+#contact {
+    margin-top:-15px;
+    width: 380px;
+    float: right;
+}
+
+#contact p {
+    margin-bottom: -19px;
+    text-align:right;
+
+}
+
+#contact h2{
+    text-align:right;
+    margin-bottom: -10px;
+}

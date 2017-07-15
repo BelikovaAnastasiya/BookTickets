@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - booking_tickets@localhost" uuid="e41334bc-7b3a-4899-8d4e-1f977aeccdc1">
+    <database-info product="MySQL" version="5.7.16-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="booking_tickets"/>
+    <table name="benefit" schema="" catalog="booking_tickets" type="TABLE">
+      <column name="idBenefit" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="typeBenefit" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sizeBenefit" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idBenefit"/>
+      <exported-key name="user_benefit" table="user" schema="" catalog="booking_tickets" columns="idBenefit"/>
+    </table>
+    <table name="movie" schema="" catalog="booking_tickets" type="TABLE">
+      <column name="idMovie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="yearOfProduction" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="type" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="mainActors" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idMovie"/>
+      <exported-key name="reservation_movie" table="reservation" schema="" catalog="booking_tickets" columns="idMovie"/>
+      <exported-key name="review_movie" table="review" schema="" catalog="booking_tickets" columns="idMovie"/>
+      <index name="title" unique="false" columns="title"/>
+      <index name="yearOfProduction" unique="false" columns="yearOfProduction"/>
+    </table>
+    <table name="reservation" schema="" catalog="booking_tickets" type="TABLE">
+      <column name="idReservation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="price" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="numberOfTheChair" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="countTickets" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="cinemaTitle" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idUser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idMovie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="isPaid" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="idReservation"/>
+      <foreign-key name="reservation_movie" columns="idMovie" ref-table="movie" ref-schema="" ref-catalog="booking_tickets" ref-columns="idMovie" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="reservation_user" columns="idUser" ref-table="user" ref-schema="" ref-catalog="booking_tickets" ref-columns="idUser" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="date" unique="false" columns="date"/>
+      <index name="price" unique="false" columns="price"/>
+      <index name="reservation_movie_idx" unique="false" columns="idMovie"/>
+      <index name="reservation_user_idx" unique="false" columns="idUser"/>
+    </table>
+    <table name="review" schema="" catalog="booking_tickets" type="TABLE">
+      <column name="idReview" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="rating" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="textReview" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idUser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idMovie" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idReview"/>
+      <foreign-key name="review_movie" columns="idMovie" ref-table="movie" ref-schema="" ref-catalog="booking_tickets" ref-columns="idMovie" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="review_user" columns="idUser" ref-table="user" ref-schema="" ref-catalog="booking_tickets" ref-columns="idUser" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="rating" unique="false" columns="rating"/>
+      <index name="review_movie_idx" unique="false" columns="idMovie"/>
+      <index name="review_user_idx" unique="false" columns="idUser"/>
+    </table>
+    <table name="user" schema="" catalog="booking_tickets" type="TABLE">
+      <column name="idUser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="isAdmin" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="login" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="mail" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="surname" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="numberCreditCard" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="idBenefit" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idUser"/>
+      <foreign-key name="user_benefit" columns="idBenefit" ref-table="benefit" ref-schema="" ref-catalog="booking_tickets" ref-columns="idBenefit" update-rule="0" delete-rule="3" deferrability="2"/>
+      <exported-key name="reservation_user" table="reservation" schema="" catalog="booking_tickets" columns="idUser"/>
+      <exported-key name="review_user" table="review" schema="" catalog="booking_tickets" columns="idUser"/>
+      <index name="login_UNIQUE" unique="true" columns="login"/>
+      <index name="mail_UNIQUE" unique="true" columns="mail"/>
+      <index name="user_benefit_idx" unique="false" columns="idBenefit"/>
+    </table>
+  </data-source>
+</component>
