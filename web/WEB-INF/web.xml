@@ -111,4 +111,13 @@
         <servlet-name>BenefitSystem</servlet-name>
         <url-pattern>/classes.web.BenefitSystem</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteBenefit</servlet-name>
+        <servlet-class>classes.web.DeleteBenefit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteBenefit</servlet-name>
+        <url-pattern>/classes.web.DeleteBenefit</url-pattern>
+    </servlet-mapping>
 </web-app>

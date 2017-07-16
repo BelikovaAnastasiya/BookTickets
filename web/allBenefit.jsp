@@ -6,9 +6,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/stylesAdmin.css" type="text/css">
+  <link rel="stylesheet" href="styles/stylesAdd.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+  <script src="js/jquery-3.2.1.js"></script>
   <title>Book Tickets</title>
+  <script>
+    pokazatel_prosmotra = 0;
+
+    function deleteForm()
+    {
+      if (pokazatel_prosmotra == 0) {
+        var el = '<html> <form name="delete" action="classes.web.DeleteBenefit" ><p>Введите название скидки: <input name="procent" type="text" ></p><input type="submit" id="del" value="Удалить"></p></form></html>';
+        $(el).appendTo("#info");
+        pokazatel_prosmotra = 1;
+      }
+      else
+      {
+        $('#info').remove();
+        pokazatel_prosmotra = 0;
+      }
+    }
+  </script>
 </head>
 <body>
 <div id="wrapper">
@@ -48,9 +66,8 @@
     <form name="actionBenefit" action="" method="get">
       <input name="setUserBenefit" type="submit" value="Назначить клиенту бонус">
       <input name="addBenefit" type="submit" value="Добавить новый тип скидок">
-    </form>
-    <form action="personalPageAdmin.jsp">
-      <div class="block2"> <input type="submit" name="cancel" value="Выйти"></div>
+      <input name="deleteBenefit" type="submit" onclick="deleteForm()" value="Удалить вид скидок">
+      <div id="info"></div>
     </form>
   </section>
 </div>
