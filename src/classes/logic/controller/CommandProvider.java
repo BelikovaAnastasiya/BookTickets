@@ -22,6 +22,8 @@ public final class CommandProvider {
         repository.put("ADD_MOVIE", new AddMovie());
         repository.put("SEE_USERS", new SeeUsers());
         repository.put("SEE_ALL_BENEFIT", new SeeAllBenefit());
+        repository.put("DELETE_BENEFIT", new DeleteBenefitByName());
+        repository.put("ADD_BENEFIT", new AddBenefit());
         ////
     }
 

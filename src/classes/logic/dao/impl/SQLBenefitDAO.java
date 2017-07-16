@@ -7,10 +7,7 @@ import classes.logic.connectionPool.exception.ConnectionPoolException;
 import classes.logic.dao.DAOBenefit;
 import classes.logic.dao.exception.DAOException;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +26,30 @@ public class SQLBenefitDAO implements DAOBenefit {
 
     @Override
     public String addBenefit(Benefit benefit) throws DAOException {
-        return null;
+        String response = "error ";
+        PreparedStatement preparedStatement = null;
+        Connection connection = null;
+
+        try{
+            connection = connectionPool.takeConnection();
+            preparedStatement = connection.prepareStatement("INSERT INTO benefit(typeBenefit, sizeBenefit) VALUES (?,?)");
+            preparedStatement.setString(1,benefit.getTypeBenefit());
+            preparedStatement.setInt(2, benefit.getSizeBenefit());
+
+            int result = preparedStatement.executeUpdate();
+            if(result == 1)
+            {
+                response = "success ";
+            }
+
+        }catch (ConnectionPoolException|SQLException e) {
+            e.printStackTrace();
+            return response;
+        }
+        finally {
+            connectionPool.closeConnection(connection,preparedStatement);
+        }
+        return response;
     }
 
     @Override
@@ -58,10 +78,40 @@ public class SQLBenefitDAO implements DAOBenefit {
 
         }catch (ConnectionPoolException|SQLException e) {
             e.printStackTrace();
+            return null;
         }
         finally {
             connectionPool.closeConnection(connection,statement,resultSet);
         }
         return benefits;
+    }
+
+    @Override
+    public String deleteBenefit(String name) throws DAOException {
+
+        String response = "error ";
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = connectionPool.takeConnection();
+            preparedStatement = connection.prepareStatement("DELETE FROM benefit WHERE typeBenefit LIKE ?");
+            preparedStatement.setString(1, name);
+            int result = preparedStatement.executeUpdate();
+            if(result == 1)
+            {
+                response = "success ";
+            }
+        } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+            return response;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return response;
+        }finally {
+            connectionPool.closeConnection(connection,preparedStatement);
+        }
+
+        return response;
     }
 }

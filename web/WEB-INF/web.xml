@@ -120,4 +120,23 @@
         <servlet-name>DeleteBenefit</servlet-name>
         <url-pattern>/classes.web.DeleteBenefit</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddBenefit</servlet-name>
+        <servlet-class>classes.web.AddBenefit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddBenefit</servlet-name>
+        <url-pattern>/classes.web.AddBenefit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SaveNewBenefit</servlet-name>
+        <servlet-class>classes.web.SaveNewBenefit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveNewBenefit</servlet-name>
+        <url-pattern>/classes.web.SaveNewBenefit</url-pattern>
+    </servlet-mapping>
+
 </web-app>

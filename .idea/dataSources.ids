@@ -8,7 +8,7 @@
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <schema name="" catalog="booking_tickets"/>
     <table name="benefit" schema="" catalog="booking_tickets" type="TABLE">
-      <column name="idBenefit" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idBenefit" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="typeBenefit" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
       <column name="sizeBenefit" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="idBenefit"/>
@@ -27,7 +27,7 @@
       <index name="yearOfProduction" unique="false" columns="yearOfProduction"/>
     </table>
     <table name="reservation" schema="" catalog="booking_tickets" type="TABLE">
-      <column name="idReservation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idReservation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="price" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="numberOfTheChair" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
@@ -45,7 +45,7 @@
       <index name="reservation_user_idx" unique="false" columns="idUser"/>
     </table>
     <table name="review" schema="" catalog="booking_tickets" type="TABLE">
-      <column name="idReview" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idReview" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="rating" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="textReview" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
       <column name="idUser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -69,7 +69,7 @@
       <column name="phone" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
       <column name="idBenefit" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="idUser"/>
-      <foreign-key name="user_benefit" columns="idBenefit" ref-table="benefit" ref-schema="" ref-catalog="booking_tickets" ref-columns="idBenefit" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="user_benefit" columns="idBenefit" ref-table="benefit" ref-schema="" ref-catalog="booking_tickets" ref-columns="idBenefit" update-rule="3" delete-rule="0" deferrability="2"/>
       <exported-key name="reservation_user" table="reservation" schema="" catalog="booking_tickets" columns="idUser"/>
       <exported-key name="review_user" table="review" schema="" catalog="booking_tickets" columns="idUser"/>
       <index name="login_UNIQUE" unique="true" columns="login"/>

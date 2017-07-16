@@ -8,7 +8,8 @@ import java.util.List;
 
 public interface BenefitService {
 
-    void addBenefit(Benefit benefit) throws ServiceException;
+    String addBenefit(Benefit benefit) throws ServiceException;
     void addBenefitToUser(Benefit benefit, User user) throws ServiceException;
     List takeAllBenefits() throws ServiceException;
+    String deleteBenefit(String name) throws ServiceException;
 }

@@ -16,7 +16,7 @@
     function deleteForm()
     {
       if (pokazatel_prosmotra == 0) {
-        var el = '<html> <form name="delete" action="classes.web.DeleteBenefit" method="get" >Введите название скидки: <input name="procent" type="text" ><input type="button" name="del" value="Удалить"></form></html>';
+        var el = '<html> <form name="delete" action="classes.web.DeleteBenefit" method="get" >Введите название скидки: <input name="procent" type="text" required ><input type="submit" name="del" value="Удалить"></form></html>';
         $(el).appendTo("#info");
         pokazatel_prosmotra = 1;
       }
@@ -63,7 +63,7 @@
       </tr>
     </c:forEach>
     </table>
-    <form name="actionBenefit">
+    <form name="actionBenefit" action="classes.web.AddBenefit">
       <input name="setUserBenefit" type="submit" value="Назначить клиенту бонус">
       <input name="addBenefit" type="submit" value="Добавить новый тип скидок">
       <input name="deleteBenefit" type="button" onclick="deleteForm()" value="Удалить вид скидок">

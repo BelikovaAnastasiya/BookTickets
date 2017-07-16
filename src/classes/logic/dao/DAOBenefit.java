@@ -11,5 +11,6 @@ public interface DAOBenefit {
     String addBenefit(Benefit benefit) throws DAOException;
     String addBenefitToUser(Benefit benefit, User user) throws DAOException;
     List takeAllBenefits() throws DAOException;
+    String deleteBenefit(String name) throws DAOException;
 
 }
