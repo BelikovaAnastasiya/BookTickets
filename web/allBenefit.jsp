@@ -11,12 +11,12 @@
   <script src="js/jquery-3.2.1.js"></script>
   <title>Book Tickets</title>
   <script>
-    pokazatel_prosmotra = 0;
+    var pokazatel_prosmotra = 0;
 
     function deleteForm()
     {
       if (pokazatel_prosmotra == 0) {
-        var el = '<html> <form name="delete" action="classes.web.DeleteBenefit" ><p>Введите название скидки: <input name="procent" type="text" ></p><input type="submit" id="del" value="Удалить"></p></form></html>';
+        var el = '<html> <form name="delete" action="classes.web.DeleteBenefit" method="get" >Введите название скидки: <input name="procent" type="text" ><input type="button" name="del" value="Удалить"></form></html>';
         $(el).appendTo("#info");
         pokazatel_prosmotra = 1;
       }
@@ -63,10 +63,10 @@
       </tr>
     </c:forEach>
     </table>
-    <form name="actionBenefit" action="" method="get">
+    <form name="actionBenefit">
       <input name="setUserBenefit" type="submit" value="Назначить клиенту бонус">
       <input name="addBenefit" type="submit" value="Добавить новый тип скидок">
-      <input name="deleteBenefit" type="submit" onclick="deleteForm()" value="Удалить вид скидок">
+      <input name="deleteBenefit" type="button" onclick="deleteForm()" value="Удалить вид скидок">
       <div id="info"></div>
     </form>
   </section>

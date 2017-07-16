@@ -23,7 +23,7 @@ table {
     margin-top: 5%;
 }
 
-button {
+button{
     color: #A52A2A;
     background-color: #F5F5DC;
     border: 2px solid #A52A2A;
@@ -79,6 +79,25 @@ input[type="submit"]
     width: 220px;
     font: 15px 'Kurale', serif;
     margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+input[type="button"]
+{
+    background-color: #F5F5DC;
+    border: 2px solid #A52A2A;
+    color: #A52A2A;
+    width: 220px;
+    font: 15px 'Kurale', serif;
+}
+
+input[type="text"]
+{
+    background-color: #F5F5DC;
+    border: 2px solid #A52A2A;
+    color: #A52A2A;
+    width: 220px;
+    font: 15px 'Kurale', serif;
 }
 
 
