@@ -20,6 +20,7 @@ input[type="text"] {
 	height: 35px;
 	color: #A52A2A;
 	vertical-align: top;
+	margin-right: 1%;   /* тут */
 }
 
 img[id="logo"]{
@@ -42,7 +43,7 @@ button {
 	color: #A52A2A;
 	background-color: #F5F5DC;
 	border: 2px solid #A52A2A;
-	height: 41px;
+	height: 35px;
 	font: 20px 'Kurale', serif;
 	font-family: 'Kurale', serif;
 }

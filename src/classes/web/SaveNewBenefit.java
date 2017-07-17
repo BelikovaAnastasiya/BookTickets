@@ -31,7 +31,7 @@ public class SaveNewBenefit extends HttpServlet {
 
         if(request.getParameter("save")!=null)
         {
-            char param = '^';
+            char param = '-';
             request.setCharacterEncoding("UTF-8");
             Controller controller = new Controller();
             String toSend = "add_benefit " + request.getParameter("title")+ param + request.getParameter("size");

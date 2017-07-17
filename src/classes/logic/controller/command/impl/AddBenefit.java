@@ -14,7 +14,7 @@ public class AddBenefit implements Command {
         Benefit benefit = new Benefit();
         String response = "error ";
         String newString = request.substring(request.indexOf(' ')+1, request.length());
-        String[] information = newString.split("^");
+        String[] information = newString.split("-");
 
         benefit.setTypeBenefit(information[0]);
         benefit.setSizeBenefit(Integer.valueOf(information[1]));

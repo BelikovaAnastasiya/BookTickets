@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,9 @@ public class FindFilm extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
     {
             request.setCharacterEncoding("UTF-8");
+            HttpSession session = request.getSession();
+            String sessionAttribute = (String)session.getAttribute("username");
+
             Controller controller = new Controller();
             String toSend = "find_film " + request.getParameter("search");
             List<Movie> movies = new ArrayList<Movie>();
@@ -45,7 +49,13 @@ public class FindFilm extends HttpServlet {
             else
             {
                     request.setAttribute("m", movies);
+                if (sessionAttribute == null) {
                     request.getRequestDispatcher("/searchMovieMainPage.jsp").forward(request, response);
+                }
+                else
+                {
+                    request.getRequestDispatcher("/searchMoviePersonalPage.jsp").forward(request, response);
+                }
             }
 
     }

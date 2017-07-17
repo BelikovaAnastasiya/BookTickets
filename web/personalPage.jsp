@@ -21,10 +21,14 @@
         <%= session.getAttribute("username")%></h2>
       <button name="button_sign">Выйти</button>
     </form>
+    <form name="search" action="classes.web.FindFilm" method="get">
+      <input type="text" name="search" placeholder="Поиск фильма"><button type="submit">Ок</button>
+    </form>
   </header>
   <aside>
     <nav>
       <ul class="top-menu">
+        <li><a href="personalPage.jsp">Главная</a> </li>
         <li><a href="/buy/">Заказать билет</a></li>
         <li><a href="classes.web.SeeBooking">Мои заказы</a></li>
         <li><a href="classes.web.SeeReviews">Мои рецензии</a></li>

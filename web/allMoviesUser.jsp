@@ -24,6 +24,7 @@
   <aside>
     <nav>
       <ul class="top-menu">
+        <li><a href="personalPage.jsp">Главная</a> </li>
         <li><a href="/buy/">Заказать билет</a></li>
         <li><a href="classes.web.SeeBooking">Мои заказы</a></li>
         <li><a href="classes.web.SeeReviews">Мои рецензии</a></li>
