@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/stylesAdmin.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <title>Book Tickets</title>
+  <title>Фильмы</title>
 </head>
 <body>
 <div id="wrapper">

@@ -54,7 +54,7 @@ public class FindFilm extends HttpServlet {
                 }
                 else
                 {
-                    request.getRequestDispatcher("/searchMoviePersonalPage.jsp").forward(request, response);
+                    request.getRequestDispatcher("/allMoviesUser.jsp").forward(request, response);
                 }
             }
 

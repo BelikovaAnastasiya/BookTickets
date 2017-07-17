@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/stylesR.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <script src="js/jquery-3.2.1.js"></script>
-    <title>Sign in</title>
+    <title>Страница регистрации</title>
     <script>
         function validate_form(form) {
             var p1 = form.password.value;

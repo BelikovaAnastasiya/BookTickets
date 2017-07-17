@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/stylesPersonal.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <title>Book Tickets</title>
+  <title>Мои рецензии</title>
 </head>
 <body>
 <div id="wrapper">
@@ -29,6 +29,7 @@
         <li><a href="classes.web.SeeBooking">Мои заказы</a></li>
         <li><a href="classes.web.SeeReviews">Мои рецензии</a></li>
         <li><a href="classes.web.AllMovies">Афиша</a></li>
+        <li><a href="classes.web.AddReview">Написать отзыв</a></li>
         <li><a href="classes.web.MyProfile">Профиль</a></li>
       </ul>
     </nav>

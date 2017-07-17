@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles/stylesAdd.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
   <script src="js/jquery-3.2.1.js"></script>
-  <title>Book Tickets</title>
+  <title>Скидочная система</title>
   <script>
     var pokazatel_prosmotra = 0;
 

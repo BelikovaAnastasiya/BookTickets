@@ -28,6 +28,11 @@ img[id="logo"]{
         height: 15%;
 }
 
+h2{
+	text-align: right;
+}
+
+
 img[id="error"]{
 	width: 60%;
 	height: 55%;
@@ -68,6 +73,7 @@ button[name="button_sign"]
 form{
 	float: right;
 }
+
 
 nav a {
 	text-decoration: none;
@@ -115,6 +121,7 @@ footer {
 	font-size: 14px;
 }
 
+
 #footer {
 	max-width: 960px;
 	margin: auto;
@@ -122,19 +129,20 @@ footer {
 	height: 90px;
 }
 
+
 footer a {
 	color: #F5F5DC;
 }
 
 #sitemap {
-        margin-top:-15px;
+	margin-top:-15px;
 	width: 250px;
 	float: left;
 	padding-right: 15px;
 }
 
 #sitemap div {
-        margin-top: -5px;
+	margin-top: -5px;
 	display: inline-block;
 	padding-right: 15px;
 }
@@ -143,7 +151,7 @@ footer a {
 	display: block;
 	text-decoration: none;
 	margin-bottom: 2px;
-	
+
 }
 
 
@@ -153,7 +161,7 @@ footer a {
 
 
 #contact {
-        margin-top:-15px;
+	margin-top:-15px;
 	width: 380px;
 	float: right;
 }
@@ -165,15 +173,14 @@ footer a {
 }
 
 #contact h3{
-        text-align:right;
+	text-align:right;
 	margin-bottom: -10px;
 }
 
 @media only screen and (max-width: 500px) {
-    nav li, button { 
-     font: 15px 'Kurale', serif;
-    }
+	nav li, button {
+		font: 15px 'Kurale', serif;
+	}
 }
-
 
 

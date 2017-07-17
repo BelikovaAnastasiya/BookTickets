@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles/normalizeR.css">
   <link rel="stylesheet" href="styles/stylesR.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <title>Sign in</title>
+  <title>Добавление нового фильма</title>
 </head>
 <body>
 <div id="wrapper">

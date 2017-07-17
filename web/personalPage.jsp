@@ -9,21 +9,21 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/stylesPersonal.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <title>Book Tickets</title>
+  <title>Персональная страница</title>
 </head>
 <body>
 <div id="wrapper">
   <header>
     <img id="logo" src="images/logo2.png" alt="Logo">
     <form name="sign" action="index.jsp" method="get">
-      <%request.setCharacterEncoding("UTF-8");%>
-      <h2>Вы зашли под записью:
-        <%= session.getAttribute("username")%></h2>
       <button name="button_sign">Выйти</button>
     </form>
     <form name="search" action="classes.web.FindFilm" method="get">
       <input type="text" name="search" placeholder="Поиск фильма"><button type="submit">Ок</button>
     </form>
+    <%request.setCharacterEncoding("UTF-8");%>
+    <h2>Вы зашли под записью:
+      <%= session.getAttribute("username")%></h2>
   </header>
   <aside>
     <nav>
@@ -33,6 +33,7 @@
         <li><a href="classes.web.SeeBooking">Мои заказы</a></li>
         <li><a href="classes.web.SeeReviews">Мои рецензии</a></li>
         <li><a href="classes.web.AllMovies">Афиша</a></li>
+        <li><a href="classes.web.AddReview">Написать отзыв</a></li>
         <li><a href="classes.web.MyProfile">Профиль</a></li>
       </ul>
     </nav>
