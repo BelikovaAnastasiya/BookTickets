@@ -42,21 +42,21 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <form name="form" id="adminAddUser" action="classes.web.BaseServletController" method="get" >
+        <form name="formAdd" id="adminAddUser" action="classes.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="AdminAddUser">
           <li><a href="#" onclick="adminAddUser()">Добавить клиента</a></li>
         </form>
-        <form name="form" id="seeAllUsers" action="classes.web.BaseServletController" method="get" >
+        <form name="formAll" id="seeAllUsers" action="classes.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="SeeAllUsers">
           <li><a href="#" onclick="seeAllUsers()">Управление клиентами</a></li>
         </form>
         <li><a href="addMovie.jsp">Добавить фильм</a></li>
         <p></p>
-        <form name="form" id="" action="classes.web.BaseServletController" method="get" >
+        <form name="formChange" id="" action="classes.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="////">
           <li><a href="//">Изменить данные о фильмах</a></li>
         </form>
-        <form name="form" id="benefitSystem" action="classes.web.BaseServletController" method="get" >
+        <form name="formBenefit" id="benefitSystem" action="classes.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BenefitSystem">
           <li><a href="#" onclick="benefitSystem()">Скидочная система</a></li>
         </form>

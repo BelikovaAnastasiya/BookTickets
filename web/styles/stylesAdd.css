@@ -108,7 +108,10 @@ input[type="text"]
     font: 15px 'Kurale', serif;
 }
 
-
+input[type="hidden"]
+{
+    margin: 0;
+}
 
 form {
     float: right;
@@ -116,6 +119,8 @@ form {
 
 nav a {
     text-decoration: none;
+    text-align: left;
+
 }
 
 nav ul {

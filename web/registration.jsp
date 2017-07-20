@@ -28,14 +28,6 @@
 
         var pokazatel_prosmotra = 0;
 
-        function add_mail()
-        {
-            if (pokazatel_prosmotra == 0) {
-                var el = '<html><p>Ваш 2-ой e-mail: <input name="mail" type="email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" required></p><p>Альтернативный e-mail:   <input type="button" id="mail-" value="Удалить" onclick="del_mail()"></p></html>';
-                $(el).appendTo("#info");
-                pokazatel_prosmotra = 1;
-            }
-        }
         function del_mail()
         {
             $('#info').remove();

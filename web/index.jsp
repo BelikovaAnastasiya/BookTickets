@@ -13,7 +13,7 @@
 <div id="wrapper">
   <header>
     <img id="logo" src="images/logo2.png" alt="Logo">
-    <form name="sign" action="login.html" method="get">
+    <form name="sign" action="login.jsp" method="get">
       <button name="button_sign">Войти</button>
     </form>
     <form name="FindFilm" action="classes.web.BaseServletController" method="get">

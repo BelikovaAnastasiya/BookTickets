@@ -7,8 +7,9 @@ body {
 
 aside {
     float: left;
-    width: 200px;
+    width: 190px;
 }
+
 section {
     margin-left: 200px;
     padding-bottom: 50px;
@@ -81,6 +82,7 @@ form[name="search"]{
 
 nav a {
     text-decoration: none;
+    text-align: left;
 }
 
 nav ul {
