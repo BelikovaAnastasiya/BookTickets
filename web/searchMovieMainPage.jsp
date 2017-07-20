@@ -23,7 +23,7 @@
     <form name="sign" action="login.jsp" method="get">
       <button name="button_sign">Войти</button>
     </form>
-    <form name="search" action="classes.web.BaseServletController" method="get">
+    <form name="search" action="epam.bookticket.web.BaseServletController" method="get">
       <input type="hidden" name="controllerName" value="FindFilm">
       <input type="text" name="search" placeholder="Поиск фильма"><button type="submit">Ок</button>
     </form>

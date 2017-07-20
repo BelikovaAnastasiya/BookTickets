@@ -42,7 +42,7 @@
         <img id="logo" src="images/logo2.png" alt="Logo">
     </header>
     <section>
-        <form name="sign" action="classes.web.BaseServletController" method="get" id="" >
+        <form name="sign" action="epam.bookticket.web.BaseServletController" method="get" id="" >
             <input type="hidden" name="controllerName" value="AddUser">
             <div class="block">
                 <p>Ваш логин: <input type="text" name="login" required></p>
@@ -59,7 +59,7 @@
                 <input type="reset" onclick="onreset(this.form)" value="Очистить">
             </div>
         </form>
-        <form action="classes.web.BaseServletController">
+        <form action="epam.bookticket.web.BaseServletController">
             <input type="hidden" name="controllerName" value="AddUser">
             <div class="block2"> <input type="submit" name="cancel" value="Выйти"></div>
         </form>

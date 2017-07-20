@@ -6,11 +6,11 @@
 
     <servlet>
         <servlet-name>BaseServletController</servlet-name>
-        <servlet-class>classes.web.BaseServletController</servlet-class>
+        <servlet-class>epam.bookticket.web.BaseServletController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>BaseServletController</servlet-name>
-        <url-pattern>/classes.web.BaseServletController</url-pattern>
+        <url-pattern>/epam.bookticket.web.BaseServletController</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -16,7 +16,7 @@
     <img id="logo" src="images/logo2.png" alt="Logo">
   </header>
   <section>
-    <form name="add" action="classes.web.BaseServletController" method="get">
+    <form name="add" action="epam.bookticket.web.BaseServletController" method="get">
       <input type="hidden" name="controllerName" value="AddMovie">
       <div class="block">
         <p>Название фильма: <input type="text" name="title" required></p>

@@ -11,7 +11,7 @@
 <body>
 <br>
 <h1>Вход в систему</h1>
-<form action="classes.web.BaseServletController" method="post" name="registration">
+<form action="epam.bookticket.web.BaseServletController" method="post" name="registration">
     <input type="hidden" name="controllerName" value="Registration">
     <br>Пользователь:</br>
     <input type="text" name="user" required>

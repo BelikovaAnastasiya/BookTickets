@@ -28,27 +28,27 @@
       <ul class="top-menu">
         <li><a href="personalPage.jsp">Главная</a> </li>
         <p></p>
-        <form name="form" id="bookticket" action="classes.web.BaseServletController" method="get" >
+        <form name="form" id="bookticket" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BookTicket">
           <li><a href="#" onclick="bookTicket()">Заказать билет</a></li>
         </form>
-        <form name="form" id="booking" action="classes.web.BaseServletController" method="get" >
+        <form name="form" id="booking" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="SeeBooking">
           <li><a href="#" onclick="booking()" >Мои заказы</a></li>
         </form>
-        <form name="form" id="reviews" action="classes.web.BaseServletController" method="get" >
+        <form name="form" id="reviews" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="SeeReviews">
           <li><a href="#" onclick="reviews()">Мои рецензии</a></li>
         </form>
-        <form name="form" id="movies" action="classes.web.BaseServletController" method="get" >
+        <form name="form" id="movies" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="AllMovies">
           <li><a href="#" onclick="movies()">Афиша</a></li>
         </form>
-        <form name="form" id="review" action="classes.web.BaseServletController" method="get" >
+        <form name="form" id="review" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="AddReview">
           <li><a href="#" onclick="review()">Написать отзыв</a></li>
         </form>
-        <form name = "form" id="profile" action="classes.web.BaseServletController" method="get">
+        <form name = "form" id="profile" action="epam.bookticket.web.BaseServletController" method="get">
           <input type="hidden" name="controllerName" value="MyProfile">
           <li><a href="#" onclick="profile()">Профиль</a></li>
         </form>

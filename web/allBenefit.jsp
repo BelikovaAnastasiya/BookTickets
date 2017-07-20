@@ -17,7 +17,7 @@
     function deleteForm()
     {
       if (pokazatel_prosmotra == 0) {
-        var el = '<html> <form name="form" id="delete" action="classes.web.BaseServletController" method="get" ><input type="hidden" name="controllerName" value="DeleteBenefit">Введите название скидки: <input name="procent" type="text" required ><input type="submit" name="del" value="Удалить"></form></html>';
+        var el = '<html> <form name="form" id="delete" action="epam.web.BaseServletController" method="get" ><input type="hidden" name="controllerName" value="DeleteBenefit">Введите название скидки: <input name="procent" type="text" required ><input type="submit" name="del" value="Удалить"></form></html>';
         $(el).appendTo("#info");
         pokazatel_prosmotra = 1;
       }
@@ -42,21 +42,21 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <form name="formAdd" id="adminAddUser" action="classes.web.BaseServletController" method="get" >
+        <form name="formAdd" id="adminAddUser" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="AdminAddUser">
           <li><a href="#" onclick="adminAddUser()">Добавить клиента</a></li>
         </form>
-        <form name="formAll" id="seeAllUsers" action="classes.web.BaseServletController" method="get" >
+        <form name="formAll" id="seeAllUsers" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="SeeAllUsers">
           <li><a href="#" onclick="seeAllUsers()">Управление клиентами</a></li>
         </form>
         <li><a href="addMovie.jsp">Добавить фильм</a></li>
         <p></p>
-        <form name="formChange" id="" action="classes.web.BaseServletController" method="get" >
+        <form name="formChange" id="" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="////">
           <li><a href="//">Изменить данные о фильмах</a></li>
         </form>
-        <form name="formBenefit" id="benefitSystem" action="classes.web.BaseServletController" method="get" >
+        <form name="formBenefit" id="benefitSystem" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BenefitSystem">
           <li><a href="#" onclick="benefitSystem()">Скидочная система</a></li>
         </form>
@@ -76,7 +76,7 @@
       </tr>
     </c:forEach>
     </table>
-    <form name="actionBenefit" action="classes.web.BaseServletController">
+    <form name="actionBenefit" action="epam.bookticket.web.BaseServletController">
       <input type="hidden" name="controllerName" value="AddBenefit">
       <input name="setUserBenefit" type="submit" value="Назначить клиенту бонус">
       <input name="addBenefit" type="submit" value="Добавить новый тип скидок">
