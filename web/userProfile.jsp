@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/stylesPersonal.css" type="text/css">
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/menu.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
   <title>Профиль</title>
 </head>
@@ -25,12 +27,31 @@
     <nav>
       <ul class="top-menu">
         <li><a href="personalPage.jsp">Главная</a> </li>
-        <li><a href="/buy/">Заказать билет</a></li>
-        <li><a href="classes.web.SeeBooking">Мои заказы</a></li>
-        <li><a href="classes.web.SeeReviews">Мои рецензии</a></li>
-        <li><a href="classes.web.AllMovies">Афиша</a></li>
-        <li><a href="classes.web.AddReview">Написать отзыв</a></li>
-        <li><a href="classes.web.MyProfile">Профиль</a></li>
+        <p></p>
+        <form name="form" id="bookticket" action="classes.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="BookTicket">
+          <li><a href="#" onclick="bookTicket()">Заказать билет</a></li>
+        </form>
+        <form name="form" id="booking" action="classes.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="SeeBooking">
+          <li><a href="#" onclick="booking()" >Мои заказы</a></li>
+        </form>
+        <form name="form" id="reviews" action="classes.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="SeeReviews">
+          <li><a href="#" onclick="reviews()">Мои рецензии</a></li>
+        </form>
+        <form name="form" id="movies" action="classes.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="AllMovies">
+          <li><a href="#" onclick="movies()">Афиша</a></li>
+        </form>
+        <form name="form" id="review" action="classes.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="AddReview">
+          <li><a href="#" onclick="review()">Написать отзыв</a></li>
+        </form>
+        <form name = "form" id="profile" action="classes.web.BaseServletController" method="get">
+          <input type="hidden" name="controllerName" value="MyProfile">
+          <li><a href="#" onclick="profile()">Профиль</a></li>
+        </form>
       </ul>
     </nav>
   </aside>

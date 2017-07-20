@@ -2,8 +2,8 @@ package classes.logic.dao.impl;
 
 
 import classes.logic.bean.User;
-import classes.logic.connectionPool.ConnectionPool;
-import classes.logic.connectionPool.exception.ConnectionPoolException;
+import classes.logic.dao.connectionPool.ConnectionPool;
+import classes.logic.dao.connectionPool.exception.ConnectionPoolException;
 import classes.logic.dao.DAOUser;
 import classes.logic.dao.exception.DAOException;
 
@@ -24,7 +24,7 @@ public class SQLUserDAO implements DAOUser {
     }
 
     @Override
-    public String sighIn(String login, String password) throws DAOException {
+    public String signIn(String login, String password) throws DAOException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Connection connection = null;
@@ -62,10 +62,10 @@ public class SQLUserDAO implements DAOUser {
     }
 
     @Override
-    public String registration(User user) throws DAOException {
+    public Boolean registration(User user) throws DAOException {
         PreparedStatement preparedStatement = null;
         Connection connection = null;
-        String response = null;
+        Boolean response = null;
 
         try {
             connection = connectionPool.takeConnection();
@@ -83,11 +83,7 @@ public class SQLUserDAO implements DAOUser {
             int result = preparedStatement.executeUpdate();
             if (result == 1)
             {
-                response = "success ";
-            }
-            else
-            {
-                response = "error ";
+                response = true;
             }
         }
         catch(ConnectionPoolException|SQLException e) {

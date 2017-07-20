@@ -8,7 +8,7 @@ import java.util.List;
 public interface UserService {
 
     String signIn(String login, String password)throws ServiceException;
-    String registration(User user)throws ServiceException;
+    Boolean registration(User user)throws ServiceException;
     String deleteUser(User user)throws ServiceException;
     String takeUserInformation(String login) throws ServiceException;
     List takeUsers() throws ServiceException;

@@ -16,7 +16,8 @@
     <form name="sign" action="login.html" method="get">
       <button name="button_sign">Войти</button>
     </form>
-    <form name="search" action="classes.web.FindFilm" method="get">
+    <form name="FindFilm" action="classes.web.BaseServletController" method="get">
+      <input type="hidden" name="controllerName" value="FindFilm">
       <input type="text" name="search" placeholder="Поиск фильма"><button type="submit">Ок</button>
     </form>
   </header>

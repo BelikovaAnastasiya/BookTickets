@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface MovieService {
 
-    String addMovie(Movie movie)throws ServiceException;
+    Boolean addMovie(Movie movie)throws ServiceException;
     String changeInfByMovie(Movie movie, String newInf)throws ServiceException;
     String deleteMovie(Movie movie)throws ServiceException;
     List takeAllMovies()throws ServiceException;

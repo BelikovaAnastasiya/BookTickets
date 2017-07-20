@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/stylesAdmin.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/menu.js"></script>
   <title>Клиенты</title>
 </head>
 <body>
@@ -23,12 +25,24 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <li><a href="classes.web.AdminAddUser">Добавить клиента</a></li>
-        <li><a href="classes.web.SeeAllUsers">Управление клиентами</a></li>
+        <form name="form" id="adminAddUser" action="classes.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="AdminAddUser">
+          <li><a href="#" onclick="adminAddUser()">Добавить клиента</a></li>
+        </form>
+        <form name="form" id="seeAllUsers" action="classes.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="SeeAllUsers">
+          <li><a href="#" onclick="seeAllUsers()">Управление клиентами</a></li>
+        </form>
         <li><a href="addMovie.jsp">Добавить фильм</a></li>
-        <li><a href="//">Изменить данные о фильмах</a></li>
-        <li><a href="classes.web.BenefitSystem">Скидочная система</a></li>
-        <li><a href="//">?Управление заказами?</a></li>
+        <p></p>
+        <form name="form" id="" action="classes.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="////">
+          <li><a href="//">Изменить данные о фильмах</a></li>
+        </form>
+        <form name="form" id="benefitSystem" action="classes.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="BenefitSystem">
+          <li><a href="#" onclick="benefitSystem()">Скидочная система</a></li>
+        </form>
       </ul>
     </nav>
   </aside>

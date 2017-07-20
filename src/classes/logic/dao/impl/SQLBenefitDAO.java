@@ -2,8 +2,8 @@ package classes.logic.dao.impl;
 
 import classes.logic.bean.Benefit;
 import classes.logic.bean.User;
-import classes.logic.connectionPool.ConnectionPool;
-import classes.logic.connectionPool.exception.ConnectionPoolException;
+import classes.logic.dao.connectionPool.ConnectionPool;
+import classes.logic.dao.connectionPool.exception.ConnectionPoolException;
 import classes.logic.dao.DAOBenefit;
 import classes.logic.dao.exception.DAOException;
 
@@ -25,8 +25,8 @@ public class SQLBenefitDAO implements DAOBenefit {
     }
 
     @Override
-    public String addBenefit(Benefit benefit) throws DAOException {
-        String response = "error ";
+    public Boolean addBenefit(Benefit benefit) throws DAOException {
+        Boolean response = false;
         PreparedStatement preparedStatement = null;
         Connection connection = null;
 
@@ -39,7 +39,7 @@ public class SQLBenefitDAO implements DAOBenefit {
             int result = preparedStatement.executeUpdate();
             if(result == 1)
             {
-                response = "success ";
+                response = true;
             }
 
         }catch (ConnectionPoolException|SQLException e) {
@@ -53,7 +53,7 @@ public class SQLBenefitDAO implements DAOBenefit {
     }
 
     @Override
-    public String addBenefitToUser(Benefit benefit, User user) throws DAOException {
+    public Boolean addBenefitToUser(Benefit benefit, User user) throws DAOException {
         return null;
     }
 
@@ -87,9 +87,9 @@ public class SQLBenefitDAO implements DAOBenefit {
     }
 
     @Override
-    public String deleteBenefit(String name) throws DAOException {
+    public Boolean deleteBenefit(String name) throws DAOException {
 
-        String response = "error ";
+        Boolean response = false;
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
@@ -100,8 +100,9 @@ public class SQLBenefitDAO implements DAOBenefit {
             int result = preparedStatement.executeUpdate();
             if(result == 1)
             {
-                response = "success ";
+                response = true;
             }
+
         } catch (ConnectionPoolException e) {
             e.printStackTrace();
             return response;
@@ -111,7 +112,6 @@ public class SQLBenefitDAO implements DAOBenefit {
         }finally {
             connectionPool.closeConnection(connection,preparedStatement);
         }
-
         return response;
     }
 }

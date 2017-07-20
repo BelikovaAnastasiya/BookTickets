@@ -41,7 +41,7 @@ img[id="error"]{
 }
 
 h3{
-	text-align: center;
+	text-align: left;
 }
 
 button {
@@ -70,10 +70,13 @@ button[name="button_sign"]
 {
         margin: 0 0 0 50px;
 }
-form{
+form[name="sign"]{
 	float: right;
 }
 
+form[name="search"]{
+	float: right;
+}
 
 nav a {
 	text-decoration: none;
@@ -97,14 +100,13 @@ nav li :hover{
 
 .top-menu li {
 	display: inline-block;
-	padding: 5px;
-	margin: 0;
 }
 
 
 .top-menu a {
 	color: #A52A2A;
 }
+
 
 
 section {

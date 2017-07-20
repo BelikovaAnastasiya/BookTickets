@@ -7,10 +7,6 @@
     <file url="file://$PROJECT_DIR$/src/classes/logic/bean/Reservation.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/bean/Review.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/bean/User.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/classes/logic/connectionPool/ConnectionPool.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/classes/logic/connectionPool/configuration/DBParameter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/classes/logic/connectionPool/configuration/DBResourceManager.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/classes/logic/connectionPool/exception/ConnectionPoolException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/controller/CommandProvider.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/controller/Controller.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/controller/command/Command.java" charset="UTF-8" />
@@ -21,6 +17,10 @@
     <file url="file://$PROJECT_DIR$/src/classes/logic/dao/DAOReservation.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/dao/DAOReview.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/dao/DAOUser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/classes/logic/dao/connectionPool/ConnectionPool.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/classes/logic/dao/connectionPool/configuration/DBParameter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/classes/logic/dao/connectionPool/configuration/DBResourceManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/classes/logic/dao/connectionPool/exception/ConnectionPoolException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/dao/exception/DAOException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/dao/factory/DAOFactory.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/dao/impl/SQLBenefitDAO.java" charset="UTF-8" />
@@ -40,9 +40,9 @@
     <file url="file://$PROJECT_DIR$/src/classes/logic/service/impl/ReservationServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/service/impl/ReviewServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/classes/logic/service/impl/UserServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/classes/web/AddUser.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/classes/web/CheckUser.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/classes/web/FindFilm.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/classes/web/Registration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/classes/web/controller/action/AddUser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/classes/web/controller/action/CheckUser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/classes/web/controller/action/FindFilm.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/classes/web/controller/action/Registration.java" charset="UTF-8" />
   </component>
 </project>

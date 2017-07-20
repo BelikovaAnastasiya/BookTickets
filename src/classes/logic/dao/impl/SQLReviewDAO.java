@@ -3,8 +3,8 @@ package classes.logic.dao.impl;
 
 import classes.logic.bean.Movie;
 import classes.logic.bean.Review;
-import classes.logic.connectionPool.ConnectionPool;
-import classes.logic.connectionPool.exception.ConnectionPoolException;
+import classes.logic.dao.connectionPool.ConnectionPool;
+import classes.logic.dao.connectionPool.exception.ConnectionPoolException;
 import classes.logic.dao.DAOReview;
 import classes.logic.dao.exception.DAOException;
 

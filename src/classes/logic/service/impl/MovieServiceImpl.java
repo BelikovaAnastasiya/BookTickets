@@ -12,7 +12,7 @@ import java.util.List;
 public class MovieServiceImpl implements MovieService
 {
     @Override
-    public String addMovie(Movie movie) throws ServiceException {
+    public Boolean addMovie(Movie movie) throws ServiceException {
 
         try {
             DAOFactory daoFactory = DAOFactory.getInstance();

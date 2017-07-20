@@ -2,8 +2,8 @@ package classes.logic.dao.impl;
 
 
 import classes.logic.bean.Movie;
-import classes.logic.connectionPool.ConnectionPool;
-import classes.logic.connectionPool.exception.ConnectionPoolException;
+import classes.logic.dao.connectionPool.ConnectionPool;
+import classes.logic.dao.connectionPool.exception.ConnectionPoolException;
 import classes.logic.dao.DAOMovie;
 import classes.logic.dao.exception.DAOException;
 
@@ -26,10 +26,10 @@ public class SQLMovieDAO implements DAOMovie {
     }
 
     @Override
-    public String addMovie(Movie movie) throws DAOException {
+    public Boolean addMovie(Movie movie) throws DAOException {
         PreparedStatement preparedStatement = null;
         Connection connection = null;
-        String response = null;
+        Boolean response = false;
 
         try{
             connection = connectionPool.takeConnection();
@@ -42,11 +42,7 @@ public class SQLMovieDAO implements DAOMovie {
             int result = preparedStatement.executeUpdate();
             if(result == 1)
             {
-                response = "success ";
-            }
-            else
-            {
-                response = "error ";
+                response = true;
             }
 
         }catch (ConnectionPoolException|SQLException e) {

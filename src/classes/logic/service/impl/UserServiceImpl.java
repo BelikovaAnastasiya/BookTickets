@@ -17,14 +17,14 @@ public class UserServiceImpl implements UserService {
         try {
             DAOFactory daoFactoryObject = DAOFactory.getInstance();
             DAOUser daoUser = daoFactoryObject.getUserDAO();
-            return daoUser.sighIn(login, password);
+            return daoUser.signIn(login, password);
         } catch (DAOException e) {
             throw new ServiceException(e);
         }
     }
 
     @Override
-    public String registration(User user) throws ServiceException {
+    public Boolean registration(User user) throws ServiceException {
         try {
             DAOFactory daoFactoryObject = DAOFactory.getInstance();
             DAOUser daoUser = daoFactoryObject.getUserDAO();

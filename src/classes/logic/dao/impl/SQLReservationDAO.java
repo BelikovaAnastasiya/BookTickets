@@ -2,8 +2,8 @@ package classes.logic.dao.impl;
 
 
 import classes.logic.bean.Reservation;
-import classes.logic.connectionPool.ConnectionPool;
-import classes.logic.connectionPool.exception.ConnectionPoolException;
+import classes.logic.dao.connectionPool.ConnectionPool;
+import classes.logic.dao.connectionPool.exception.ConnectionPoolException;
 import classes.logic.dao.DAOReservation;
 import classes.logic.dao.exception.DAOException;
 

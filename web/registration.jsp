@@ -50,7 +50,8 @@
         <img id="logo" src="images/logo2.png" alt="Logo">
     </header>
     <section>
-        <form name="sign" action="classes.web.AddUser" method="get">
+        <form name="sign" action="classes.web.BaseServletController" method="get" id="" >
+            <input type="hidden" name="controllerName" value="AddUser">
             <div class="block">
                 <p>Ваш логин: <input type="text" name="login" required></p>
                 <p>Ваш пароль: <input name="password" type="password" id="password" placeholder=">6 символов (буквы, цифры)" pattern ="(?=^.{6,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$" required></p>
@@ -66,7 +67,8 @@
                 <input type="reset" onclick="onreset(this.form)" value="Очистить">
             </div>
         </form>
-        <form action="classes.web.AddUser">
+        <form action="classes.web.BaseServletController">
+            <input type="hidden" name="controllerName" value="AddUser">
             <div class="block2"> <input type="submit" name="cancel" value="Выйти"></div>
         </form>
     </section>

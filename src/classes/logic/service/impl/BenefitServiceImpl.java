@@ -13,7 +13,7 @@ import java.util.List;
 public class BenefitServiceImpl implements BenefitService {
 
     @Override
-    public String addBenefit(Benefit benefit) throws ServiceException {
+    public Boolean addBenefit(Benefit benefit) throws ServiceException {
         try {
             DAOFactory daoFactory = DAOFactory.getInstance();
             DAOBenefit daoBenefit = daoFactory.getBenefitDAO();
@@ -25,8 +25,8 @@ public class BenefitServiceImpl implements BenefitService {
     }
 
     @Override
-    public void addBenefitToUser(Benefit benefit, User user) throws ServiceException {
-
+    public Boolean addBenefitToUser(Benefit benefit, User user) throws ServiceException {
+        return false;
     }
 
 
@@ -43,7 +43,7 @@ public class BenefitServiceImpl implements BenefitService {
     }
 
     @Override
-    public String deleteBenefit(String name) throws ServiceException {
+    public Boolean deleteBenefit(String name) throws ServiceException {
         try {
             DAOFactory daoFactory = DAOFactory.getInstance();
             DAOBenefit daoBenefit = daoFactory.getBenefitDAO();
