@@ -21,7 +21,7 @@ public class ControllerFactory {
         try {
             controllerInstance = (BaseController) ControllerClass.newInstance();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(getClass() + " was unable to instance'" + controllerName + "'.");
         }
         return controllerInstance;
     }
@@ -46,6 +46,9 @@ public class ControllerFactory {
         map.put("SeeReviews", SeeReviews.class);
         map.put("BookTicket", BookTicket.class);
         map.put("SignOut", SignOut.class);
+        map.put("SignIn", SignIn.class);
+        map.put("PersonalPage", PersonalPage.class);
+        map.put("AddMovieAdmin", AddMovieAdmin.class);
 
         ////
         return map;

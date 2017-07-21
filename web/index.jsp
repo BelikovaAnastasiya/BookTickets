@@ -13,7 +13,8 @@
 <div id="wrapper">
   <header>
     <img id="logo" src="images/logo2.png" alt="Logo">
-    <form name="sign" action="login.jsp" method="get">
+    <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
+      <input type="hidden" name="controllerName" value="SignIn">
       <button name="button_sign">Войти</button>
     </form>
     <form name="FindFilm" action="epam.bookticket.web.BaseServletController" method="get">

@@ -30,18 +30,19 @@ public class BenefitSystem extends BaseController {
             {
                 String message = "No benefits in this system!";
                 request.setAttribute("error", message);
-                request.getRequestDispatcher("/errorAdmin.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/jsp/errorAdmin.jsp").forward(request,response);
             }
             else
             {
 
                 request.setAttribute("benefits", benefits);
-                request.getRequestDispatcher("/allBenefit.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/jsp/allBenefit.jsp").forward(request,response);
 
             }
 
         }catch (ServiceException e) {
-            e.printStackTrace();
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
         }
     }
 }

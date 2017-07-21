@@ -1,4 +1,4 @@
-<%@ page import="java.util.ArrayList" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -6,17 +6,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/stylesPersonal.css" type="text/css">
+  <link rel="stylesheet" href="../../styles/normalize.css">
+  <link rel="stylesheet" href="../../styles/stylesPersonal.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <script src="js/jquery-3.2.1.js"></script>
-  <script src="js/menu.js"></script>
-  <title>Мои заказы</title>
+  <script src="../../js/jquery-3.2.1.js"></script>
+  <script src="../../js/menu.js"></script>
+  <title>Мои рецензии</title>
 </head>
 <body>
 <div id="wrapper">
   <header>
-    <img id="logo" src="images/logo2.png" alt="Logo">
+    <img id="logo" src="../../images/logo2.png" alt="Logo">
     <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
       <%request.setCharacterEncoding("UTF-8");%>
       <h2>Вы зашли под записью: <%= session.getAttribute("username")%></h2>
@@ -27,8 +27,10 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <li><a href="personalPage.jsp">Главная</a> </li>
-        <p></p>
+        <form name="page" id="mainPage" action="epam.bookticket.web.BaseServletController" method="get">
+          <input type="hidden" name="controllerName" value="PersonalPage">
+          <li><a href="#" onclick="mainPage()">Главная</a> </li>
+        </form>
         <form name="form" id="bookticket" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BookTicket">
           <li><a href="#" onclick="bookTicket()">Заказать билет</a></li>
@@ -57,18 +59,15 @@
     </nav>
   </aside>
   <section>
-    <%
-      ArrayList str = (ArrayList)request.getAttribute("r");
-    for(int i = 0; i<str.size(); i=i+3)
-    {
-    %>
-    <p>Название фильма: <%out.println(str.get(i));%></p>
-    <p>Оценка: <%out.println(str.get(i+1));%></p>
-    <p>Отзыв: <%out.println(str.get(i+2));%></p>
-    <hr>
-    <%
-    }
-    %>
+    <c:forEach items="${booking}" var="reservations">
+      <p>Название фильма: ${reservations.movieTitle}</p>
+      <p>Кинотеатр: ${reservations.cinemaTitle}</p>
+      <p>Дата: ${reservations.date}</p>
+      <p>Цена: ${reservations.price}</p>
+      <p>Кол-во билетов: ${reservations.countTickets}</p>
+      <p>Номера мест: ${reservations.numberOfTheChair}</p>
+      <hr>
+    </c:forEach>
   </section>
 </div>
 <footer>
@@ -93,5 +92,4 @@
 </footer>
 </body>
 </html>
-
 

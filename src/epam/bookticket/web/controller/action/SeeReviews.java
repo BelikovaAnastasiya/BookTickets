@@ -32,16 +32,17 @@ public class SeeReviews extends BaseController {
             {
                 String message = "No reviews for that user!";
                 request.setAttribute("error", message);
-                request.getRequestDispatcher("/errorUser.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/jsp/errorUser.jsp").forward(request,response);
             }
             else {
 
                 request.setAttribute("r", reviews);
-                request.getRequestDispatcher("/userReviews.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/jsp/userReviews.jsp").forward(request, response);
             }
         }catch (ServiceException e)
         {
-            e.printStackTrace();
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
         }
     }
 }

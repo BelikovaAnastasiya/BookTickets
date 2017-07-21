@@ -33,16 +33,17 @@ public class SeeBooking extends BaseController {
             {
                 String message = "You don't have reservations!!!";
                 request.setAttribute("error", message);
-                request.getRequestDispatcher("/errorUser.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/jsp/errorUser.jsp").forward(request,response);
             }
             else
             {
                 request.setAttribute("booking", reservations);
-                request.getRequestDispatcher("/userReservation.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/jsp/userReservation.jsp").forward(request, response);
             }
         }catch (ServiceException e)
         {
-            e.printStackTrace();
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
         }
     }
 }

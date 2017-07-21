@@ -24,15 +24,16 @@ public class DeleteBenefit extends BaseController {
 
             if (result == true)
             {
-                request.getRequestDispatcher("/personalPageAdmin.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp").forward(request, response);
             }
             else
             {
                 request.setAttribute("error", "Can't delete this benefit!");
-                request.getRequestDispatcher("/errorAdmin.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/jsp/errorAdmin.jsp").forward(request,response);
             }
         }catch (ServiceException e) {
-            e.printStackTrace();}
-
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
+        }
     }
 }

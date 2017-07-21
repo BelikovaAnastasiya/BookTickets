@@ -62,8 +62,10 @@ public class SQLReservationDAO implements DAOReservation {
                 reservations.add(reservation);
             }
 
-        }catch (ConnectionPoolException|SQLException e) {
-            e.printStackTrace();
+        }catch (ConnectionPoolException e) {
+            throw new DAOException("Can't open connection to database yo database",e);
+        }catch(SQLException e){
+            throw new DAOException("Some problems with your query",e);
         }
         finally {
             connectionPool.closeConnection(connection,statement,resultSet);

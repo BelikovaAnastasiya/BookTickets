@@ -19,7 +19,7 @@ public class Registration extends BaseController {
             checkUser.execute(request,response,request.getServletContext());
 
         } else if (request.getParameter("registration")!=null) {
-            RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/registration.jsp");
+            RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/WEB-INF/jsp/registration.jsp");
             dispatcher.forward(request, response);
         }
     }

@@ -61,8 +61,10 @@ public class SQLReviewDAO implements DAOReview {
                 reviews.add(resultSet.getString(3));
             }
 
-        }catch (ConnectionPoolException|SQLException e) {
-            e.printStackTrace();
+        }catch (ConnectionPoolException e) {
+            throw new DAOException("Can't open connection to database yo database",e);
+        }catch(SQLException e){
+            throw new DAOException("Some problems with your query",e);
         }
         finally {
             connectionPool.closeConnection(connection,preparedStatement,resultSet);

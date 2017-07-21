@@ -22,7 +22,7 @@ public class MyProfile extends BaseController {
         if(name == null)
         {
             request.setAttribute("error", "You are not authentication user!");
-            request.getRequestDispatcher("/error.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
         }
         else {
             request.setCharacterEncoding("UTF-8");
@@ -47,14 +47,15 @@ public class MyProfile extends BaseController {
                     request.setAttribute("phone", information[6]);
                     request.setAttribute("benefit", information[7]);
 
-                    request.getRequestDispatcher("/userProfile.jsp").forward(request, response);
+                    request.getRequestDispatcher("/WEB-INF/jsp/userProfile.jsp").forward(request, response);
                 } else {
                     String message = "Error with profile information!!";
                     request.setAttribute("error", message);
-                    request.getRequestDispatcher("/errorUser.jsp").forward(request, response);
+                    request.getRequestDispatcher("/WEB-INF/jsp/errorUser.jsp").forward(request, response);
                 }
             } catch (ServiceException e) {
-                e.printStackTrace();
+                request.setAttribute("error", e.getMessage());
+                request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
             }
         }
     }

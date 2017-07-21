@@ -23,7 +23,7 @@ public class AddMovie extends BaseController {
         if(name == null)
         {
             request.setAttribute("error", "You are not authentication user!");
-            request.getRequestDispatcher("/error.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
         }
         else
         {
@@ -40,16 +40,18 @@ public class AddMovie extends BaseController {
                     Boolean answer = movieService.addMovie(movie);
 
                     if (answer == true) {
-                        request.getRequestDispatcher("/personalPageAdmin.jsp").forward(request, response);
+                        request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp").forward(request, response);
                     } else {
                         request.setAttribute("error", "Uncorrect information about this movie!");
-                        request.getRequestDispatcher("/error.jsp").forward(request, response);
+                        request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
                     }
                 } catch (ServiceException e) {
-                    e.printStackTrace();
+
+                    request.setAttribute("error", e.getMessage());
+                    request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
                 }
             } else {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/personalPageAdmin.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp");
                 dispatcher.forward(request, response);
             }
         }

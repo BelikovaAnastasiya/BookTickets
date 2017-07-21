@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="styles/normalizeR.css">
-    <link rel="stylesheet" href="styles/stylesR.css" type="text/css">
+    <link rel="stylesheet" href="../../styles/normalizeR.css">
+    <link rel="stylesheet" href="../../styles/stylesR.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-    <script src="js/jquery-3.2.1.js"></script>
+    <script src="../../js/jquery-3.2.1.js"></script>
     <title>Страница регистрации</title>
     <script>
         function validate_form(form) {
@@ -39,7 +39,7 @@
 
 <div id="wrapper">
     <header>
-        <img id="logo" src="images/logo2.png" alt="Logo">
+        <img id="logo" src="../../images/logo2.png" alt="Logo">
     </header>
     <section>
         <form name="sign" action="epam.bookticket.web.BaseServletController" method="get" id="" >

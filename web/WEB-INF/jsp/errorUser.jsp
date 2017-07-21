@@ -6,17 +6,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/stylesPersonal.css" type="text/css">
+  <link rel="stylesheet" href="../../styles/normalize.css">
+  <link rel="stylesheet" href="../../styles/stylesPersonal.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <script src="js/jquery-3.2.1.js"></script>
-  <script src="js/menu.js"></script>
-  <title>Мои рецензии</title>
+  <script src="../../js/jquery-3.2.1.js"></script>
+  <script src="../../js/menu.js"></script>
+  <title>Страниц ошибки</title>
 </head>
 <body>
 <div id="wrapper">
   <header>
-    <img id="logo" src="images/logo2.png" alt="Logo">
+    <img id="logo" src="../../images/logo2.png" alt="Logo">
     <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
       <%request.setCharacterEncoding("UTF-8");%>
       <h2>Вы зашли под записью: <%= session.getAttribute("username")%></h2>
@@ -27,8 +27,10 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <li><a href="personalPage.jsp">Главная</a> </li>
-        <p></p>
+        <form name="page" id="mainPage" action="epam.bookticket.web.BaseServletController" method="get">
+          <input type="hidden" name="controllerName" value="PersonalPage">
+          <li><a href="#" onclick="mainPage()">Главная</a> </li>
+        </form>
         <form name="form" id="bookticket" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BookTicket">
           <li><a href="#" onclick="bookTicket()">Заказать билет</a></li>
@@ -57,15 +59,10 @@
     </nav>
   </aside>
   <section>
-    <c:forEach items="${booking}" var="reservations">
-      <p>Название фильма: ${reservations.movieTitle}</p>
-      <p>Кинотеатр: ${reservations.cinemaTitle}</p>
-      <p>Дата: ${reservations.date}</p>
-      <p>Цена: ${reservations.price}</p>
-      <p>Кол-во билетов: ${reservations.countTickets}</p>
-      <p>Номера мест: ${reservations.numberOfTheChair}</p>
-      <hr>
-    </c:forEach>
+    <img id="error" src="../../images/error.jpg" alt="Error">
+    <br>
+    <h3> <%request.setCharacterEncoding("UTF-8");%>
+      <%= request.getAttribute("error")%></h3>
   </section>
 </div>
 <footer>

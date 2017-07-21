@@ -5,29 +5,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="styles/normalizeR.css">
-  <link rel="stylesheet" href="styles/stylesR.css" type="text/css">
+  <link rel="stylesheet" href="../../styles/normalizeR.css">
+  <link rel="stylesheet" href="../../styles/stylesR.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <title>Добавление нового типа скидки</title>
+  <title>Добавление нового фильма</title>
 </head>
 <body>
 <div id="wrapper">
   <header>
-    <img id="logo" src="images/logo2.png" alt="Logo">
+    <img id="logo" src="../../images/logo2.png" alt="Logo">
   </header>
   <section>
     <form name="add" action="epam.bookticket.web.BaseServletController" method="get">
-      <input type="hidden" name="controllerName" value="SaveNewBenefit">
+      <input type="hidden" name="controllerName" value="AddMovie">
       <div class="block">
-        <p>Тип скидки: <input type="text" name="title" required></p>
-        <p>Размер: <input name="size" type="number" min="1" max="100" required></p>
+        <p>Название фильма: <input type="text" name="title" required></p>
+        <p>Год выпуска: <input name="year" type="number" min="1960" max="2017" required></p>
+        <p>Жанр: <input type="text" name="type"></p>
+        <p>В ролях: <input type="text" name="actors"></p>
       </div>
       <div class="buttons">
         <input type="submit" name="save" value="Сохранить">
         <input type="reset" onclick="onreset(this.form)" value="Очистить">
       </div>
     </form>
-    <form action="personalPageAdmin.jsp">
+    <form action="epam.bookticket.web.BaseServletController" method="get">
+      <input type="hidden" name="controllerName" value="PersonalPage">
       <div class="block2"> <input type="submit" name="cancel" value="Выйти"></div>
     </form>
   </section>

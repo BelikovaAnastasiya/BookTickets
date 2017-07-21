@@ -5,17 +5,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/stylesAdmin.css" type="text/css">
+  <link rel="stylesheet" href="../../styles/normalize.css">
+  <link rel="stylesheet" href="../../styles/stylesAdmin.css" type="text/css">
+  <script src="../../js/jquery-3.2.1.js"></script>
+  <script src="../../js/menu.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <script src="js/jquery-3.2.1.js"></script>
-  <script src="js/menu.js"></script>
-  <title>Фильмы</title>
+  <title>Страница администратора</title>
 </head>
 <body>
 <div id="wrapper">
   <header>
-    <img id="logo" src="images/logo2.png" alt="Logo">
+    <img id="logo" src="../../images/logo2.png" alt="Logo">
     <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
       <%request.setCharacterEncoding("UTF-8");%>
       <h2>Вы зашли под записью: <%= session.getAttribute("adminname")%></h2>
@@ -26,35 +26,31 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <form name="form" id="adminAddUser" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="formAdd" id="adminAddUser" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="AdminAddUser">
-          <li><a href="#" onclick="adminAddUser()">Добавить клиента</a></li>
+        <li><a href="#" onclick="adminAddUser()">Добавить клиента</a></li>
         </form>
-        <form name="form" id="seeAllUsers" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="formAll" id="seeAllUsers" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="SeeAllUsers">
-          <li><a href="#" onclick="seeAllUsers()">Управление клиентами</a></li>
+        <li><a href="#" onclick="seeAllUsers()">Управление клиентами</a></li>
         </form>
-        <li><a href="addMovie.jsp">Добавить фильм</a></li>
-        <p></p>
-        <form name="form" id="" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="formAddM" id="addMovieAdmin" action="epam.bookticket.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="AddMovieAdmin">
+        <li><a href="#" onclick="addMovieAdmin()">Добавить фильм</a></li>
+        </form>
+        <form name="formChange" id="changeMovie" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="////">
-          <li><a href="//">Изменить данные о фильмах</a></li>
+        <li><a href="//">Изменить данные о фильмах</a></li>
         </form>
-        <form name="form" id="benefitSystem" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="formBenefit" id="benefitSystem" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BenefitSystem">
-          <li><a href="#" onclick="benefitSystem()">Скидочная система</a></li>
+        <li><a href="#" onclick="benefitSystem()">Скидочная система</a></li>
         </form>
       </ul>
     </nav>
   </aside>
   <section>
-    <c:forEach items="${m}" var="movie">
-      <p>Название фильма: ${movie.title}</p>
-      <p>Год выпуска: ${movie.yearOfProduction}</p>
-      <p>Жанр: ${movie.type}</p>
-      <p>Главные роли исполняли: ${movie.mainActors}</p>
-      <hr>
-    </c:forEach>
+    <img id="kino" src="../../images/kino_up.jpg" alt="Kino">
   </section>
 </div>
 <footer>

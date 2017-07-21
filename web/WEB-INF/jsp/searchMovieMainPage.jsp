@@ -11,16 +11,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/styles.css" type="text/css">
+  <link rel="stylesheet" href="../../styles/normalize.css">
+  <link rel="stylesheet" href="../../styles/styles.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
   <title>Поиск фильма</title>
 </head>
 <body>
 <div id="wrapper">
   <header>
-    <img id="logo" src="images/logo2.png" alt="Logo">
-    <form name="sign" action="login.jsp" method="get">
+    <img id="logo" src="../../images/logo2.png" alt="Logo">
+    <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
+      <input type="hidden" name="controllerName" value="SignIn">
       <button name="button_sign">Войти</button>
     </form>
     <form name="search" action="epam.bookticket.web.BaseServletController" method="get">

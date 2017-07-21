@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="styles/login.css" type="text/css">
+    <link rel="stylesheet" href="../../styles/login.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <title>Вход в систему</title>
 </head>

@@ -31,20 +31,21 @@ public class SaveNewBenefit extends BaseController {
 
                 if (answer)
                 {
-                    request.getRequestDispatcher("/personalPageAdmin.jsp").forward(request,response);
+                    request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp").forward(request,response);
                 }
                 else
                 {
                     request.setAttribute("error", "Some problems with saving!");
-                    request.getRequestDispatcher("/error.jsp").forward(request,response);
+                    request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
                 }
             } catch (ServiceException e) {
-                e.printStackTrace();
+                request.setAttribute("error", e.getMessage());
+                request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
             }
         }
         else if (request.getParameter("cancel")!=null) {
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/personalPageAdmin.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp");
             dispatcher.forward(request, response);
         }
     }

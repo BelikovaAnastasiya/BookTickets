@@ -8,11 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class AdminAddUser extends BaseController {
-
+public class SignIn extends BaseController {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request,response);
     }
 }

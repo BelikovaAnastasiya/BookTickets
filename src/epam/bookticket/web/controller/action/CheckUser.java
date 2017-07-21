@@ -34,21 +34,22 @@ public class CheckUser extends BaseController {
                 if(answer.substring(answer.indexOf(' ')+1).equals("admin"))
                 {
                     session.setAttribute("adminname", request.getParameter("user"));
-                    request.getRequestDispatcher("/personalPageAdmin.jsp").forward(request, response);
+                    request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp").forward(request, response);
                 }
                 else
                 {
                     session.setAttribute("username", request.getParameter("user"));
-                    request.getRequestDispatcher("/personalPage.jsp").forward(request, response);
+                    request.getRequestDispatcher("/WEB-INF/jsp/personalPage.jsp").forward(request, response);
                 }
             }
             else
             {
                 request.setAttribute("error", "No users with this login and password. Check your information!");
-                request.getRequestDispatcher("/error.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
             }
         } catch (ServiceException e) {
-            e.printStackTrace();
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
         }
 
 

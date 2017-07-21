@@ -33,21 +33,22 @@ public class FindFilm extends BaseController {
             {
                 String message = "No movies with that title";
                 request.setAttribute("error", message);
-                request.getRequestDispatcher("/error.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
             }
             else
             {
                 request.setAttribute("m", movies);
                 if (sessionAttribute == null) {
-                    request.getRequestDispatcher("/searchMovieMainPage.jsp").forward(request, response);
+                    request.getRequestDispatcher("/WEB-INF/jsp/searchMovieMainPage.jsp").forward(request, response);
                 }
                 else
                 {
-                    request.getRequestDispatcher("/allMoviesUser.jsp").forward(request, response);
+                    request.getRequestDispatcher("/WEB-INF/jsp/allMoviesUser.jsp").forward(request, response);
                 }
             }
         } catch (ServiceException e) {
-            e.printStackTrace();
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
         }
 
 

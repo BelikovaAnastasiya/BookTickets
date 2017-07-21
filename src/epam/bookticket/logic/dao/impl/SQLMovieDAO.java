@@ -45,8 +45,10 @@ public class SQLMovieDAO implements DAOMovie {
                 response = true;
             }
 
-        }catch (ConnectionPoolException|SQLException e) {
-            e.printStackTrace();
+        }catch (ConnectionPoolException e) {
+            throw new DAOException("Can't open connection to database yo database",e);
+        }catch(SQLException e){
+            throw new DAOException("Some problems with your query",e);
         }
         finally {
             connectionPool.closeConnection(connection,preparedStatement);
@@ -87,8 +89,10 @@ public class SQLMovieDAO implements DAOMovie {
                 movies.add(movie);
             }
 
-        }catch (ConnectionPoolException|SQLException e) {
-            e.printStackTrace();
+        }catch (ConnectionPoolException e) {
+            throw new DAOException("Can't open connection to database yo database",e);
+        }catch(SQLException e){
+            throw new DAOException("Some problems with your query",e);
         }
         finally {
             connectionPool.closeConnection(connection,preparedStatement,resultSet);
@@ -117,8 +121,10 @@ public class SQLMovieDAO implements DAOMovie {
                 movies.add(movie);
             }
 
-        } catch (ConnectionPoolException|SQLException e) {
-            e.printStackTrace();
+        }catch (ConnectionPoolException e) {
+            throw new DAOException("Can't open connection to database yo database",e);
+        }catch(SQLException e){
+            throw new DAOException("Some problems with your query",e);
         }
         finally {
             connectionPool.closeConnection(connection,st,rs);

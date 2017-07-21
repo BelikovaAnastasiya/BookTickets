@@ -30,7 +30,7 @@ public class AllMovies extends BaseController {
             {
                 String message = "No movies";
                 request.setAttribute("error", message);
-                request.getRequestDispatcher("/errorUser.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/jsp/errorUser.jsp").forward(request,response);
             }
             else
             {
@@ -41,10 +41,11 @@ public class AllMovies extends BaseController {
                     request.setAttribute("mainActors", movies.get(i).getMainActors());
                     request.setAttribute("m", movies);
                 }
-                request.getRequestDispatcher("/allMoviesUser.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/jsp/allMoviesUser.jsp").forward(request, response);
             }
         } catch (ServiceException e) {
-            e.printStackTrace();
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
         }
 
     }

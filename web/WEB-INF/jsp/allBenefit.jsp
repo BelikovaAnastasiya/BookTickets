@@ -5,11 +5,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/stylesAdd.css" type="text/css">
+  <link rel="stylesheet" href="../../styles/normalize.css">
+  <link rel="stylesheet" href="../../styles/stylesAdd.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <script src="js/jquery-3.2.1.js"></script>
-  <script src="js/menu.js"></script>
+  <script src="../../js/jquery-3.2.1.js"></script>
+  <script src="../../js/menu.js"></script>
   <title>Скидочная система</title>
   <script>
     var pokazatel_prosmotra = 0;
@@ -32,7 +32,7 @@
 <body>
 <div id="wrapper">
   <header>
-    <img id="logo" src="images/logo2.png" alt="Logo">
+    <img id="logo" src="../../images/logo2.png" alt="Logo">
     <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
       <%request.setCharacterEncoding("UTF-8");%>
       <h2>Вы зашли под записью: <%= session.getAttribute("adminname")%></h2>
@@ -51,9 +51,11 @@
           <input type="hidden" name="controllerName" value="SeeAllUsers">
           <li><a href="#" onclick="seeAllUsers()">Управление клиентами</a></li>
         </form>
-        <li><a href="addMovie.jsp">Добавить фильм</a></li>
-        <p></p>
-        <form name="formChange" id="" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="formAddM" id="addMovieAdmin" action="epam.bookticket.web.BaseServletController" method="get" >
+          <input type="hidden" name="controllerName" value="AddMovieAdmin">
+          <li><a href="#" onclick="addMovieAdmin()">Добавить фильм</a></li>
+        </form>
+        <form name="formChange" id="changeMovie" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="////">
           <li><a href="//">Изменить данные о фильмах</a></li>
         </form>

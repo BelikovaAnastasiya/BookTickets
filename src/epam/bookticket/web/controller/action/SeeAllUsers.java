@@ -30,15 +30,16 @@ public class SeeAllUsers extends BaseController {
             {
                 String message = "No users in the system";
                 request.setAttribute("error", message);
-                request.getRequestDispatcher("/errorAdmin.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/jsp/errorAdmin.jsp").forward(request,response);
             }
             else
             {
                 request.setAttribute("users", userList);
-                request.getRequestDispatcher("allUsers.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/jsp/allUsers.jsp").forward(request, response);
             }
         } catch (ServiceException e) {
-            e.printStackTrace();
+            request.setAttribute("error", e.getMessage());
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
         }
     }
 }

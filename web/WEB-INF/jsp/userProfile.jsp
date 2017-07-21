@@ -6,17 +6,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/stylesPersonal.css" type="text/css">
+  <link rel="stylesheet" href="../../styles/normalize.css">
+  <link rel="stylesheet" href="../../styles/stylesPersonal.css" type="text/css">
+  <script src="../../js/jquery-3.2.1.js"></script>
+  <script src="../../js/menu.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-  <script src="js/jquery-3.2.1.js"></script>
-  <script src="js/menu.js"></script>
-  <title>Страниц ошибки</title>
+  <title>Профиль</title>
 </head>
 <body>
 <div id="wrapper">
   <header>
-    <img id="logo" src="images/logo2.png" alt="Logo">
+    <img id="logo" src="../../images/logo2.png" alt="Logo">
     <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
       <%request.setCharacterEncoding("UTF-8");%>
       <h2>Вы зашли под записью: <%= session.getAttribute("username")%></h2>
@@ -27,8 +27,10 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <li><a href="personalPage.jsp">Главная</a> </li>
-        <p></p>
+        <form name="page" id="mainPage" action="epam.bookticket.web.BaseServletController" method="get">
+          <input type="hidden" name="controllerName" value="PersonalPage">
+          <li><a href="#" onclick="mainPage()">Главная</a> </li>
+        </form>
         <form name="form" id="bookticket" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BookTicket">
           <li><a href="#" onclick="bookTicket()">Заказать билет</a></li>
@@ -57,10 +59,17 @@
     </nav>
   </aside>
   <section>
-    <img id="error" src="images/error.jpg" alt="Error">
-    <br>
-    <h3> <%request.setCharacterEncoding("UTF-8");%>
-      <%= request.getAttribute("error")%></h3>
+     <br>
+      <hr>
+      <p>Логин: <%=request.getAttribute("login")%></p>
+      <p>Пароль: <%=request.getAttribute("password")%></p>
+      <p>E-mail: <%=request.getAttribute("mail")%></p>
+      <p>Имя: <%=request.getAttribute("name")%></p>
+      <p>Фамилия: <%=request.getAttribute("surname")%></p>
+      <p>Номер кредитной карты: <%=request.getAttribute("numberCreditCard")%></p>
+      <p>Телефон: <%=request.getAttribute("phone")%></p>
+      <p>Размер скидки: <%=request.getAttribute("benefit")%>%</p>
+      <hr>
   </section>
 </div>
 <footer>

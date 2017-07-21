@@ -1,5 +1,19 @@
 var pokazatel_prosmotra = 0;
 
+
+function mainPage()
+{
+    if(pokazatel_prosmotra == 0) {
+        document.getElementById('mainPage').submit();
+        pokazatel_prosmotra = 1;
+    }
+    else
+    {
+        pokazatel_prosmotra = 0;
+    }
+    return false;
+}
+
 function profile()
 {
     if(pokazatel_prosmotra == 0) {
@@ -116,3 +130,17 @@ function benefitSystem()
     }
     return false;
 }
+
+function addMovieAdmin()
+{
+    if(pokazatel_prosmotra == 0) {
+        document.getElementById('addMovieAdmin').submit();
+        pokazatel_prosmotra = 1;
+    }
+    else
+    {
+        pokazatel_prosmotra = 0;
+    }
+    return false;
+}
+

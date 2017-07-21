@@ -6,17 +6,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/stylesPersonal.css" type="text/css">
-  <script src="js/jquery-3.2.1.js"></script>
-  <script src="js/menu.js"></script>
+  <link rel="stylesheet" href="../../styles/normalize.css">
+  <link rel="stylesheet" href="../../styles/stylesPersonal.css" type="text/css">
+  <script src="../../js/jquery-3.2.1.js"></script>
+  <script src="../../js/menu.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
   <title>Персональная страница</title>
 </head>
 <body>
 <div id="wrapper">
   <header>
-    <img id="logo" src="images/logo2.png" alt="Logo">
+    <img id="logo" src="../../images/logo2.png" alt="Logo">
     <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
       <input type="hidden" name="controllerName" value="SignOut">
       <button name="button_sign">Выйти</button>
@@ -32,8 +32,10 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <li><a href="personalPage.jsp">Главная</a> </li>
-        <p></p>
+        <form name="page" id="mainPage" action="epam.bookticket.web.BaseServletController" method="get">
+          <input type="hidden" name="controllerName" value="PersonalPage">
+          <li><a href="#" onclick="mainPage()">Главная</a> </li>
+        </form>
         <form name="form" id="bookticket" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BookTicket">
         <li><a href="#" onclick="bookTicket()">Заказать билет</a></li>
@@ -62,7 +64,7 @@
     </nav>
   </aside>
   <section>
-    <img id="kino" src="images/kino_up.jpg" alt="Kino">
+    <img id="kino" src="../../images/kino_up.jpg" alt="Kino">
   </section>
 </div>
 <footer>

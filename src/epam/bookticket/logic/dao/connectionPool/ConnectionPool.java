@@ -80,75 +80,77 @@ public class ConnectionPool {
         }
         return connection;
     }
-    public void dispose()
+    public void dispose() throws ConnectionPoolException
     {
         clearConnectionQueue();
     }
 
-    private void clearConnectionQueue()
+    private void clearConnectionQueue() throws ConnectionPoolException
     {
         try{
             closeConnectionQueue(givenAwayConnectionQueue);
             closeConnectionQueue(connectionBlockingQueue);
         }catch (SQLException e) {
-            e.printStackTrace();
+            throw new ConnectionPoolException("SQLException in ConnectionPoll with closing",e);
         }
     }
 
     public void closeConnection (Connection connection, Statement statement)
     {
-        try
-        {
+
             if(statement != null)
             {
-                statement.close();
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-        try {
             if(connection != null)
             {
-                connection.close();
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
     }
 
     public void closeConnection (Connection connection, Statement statement, ResultSet resultSet)
     {
-        try
-        {
+
             if(resultSet!=null)
             {
-                resultSet.close();
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-        try
-        {
+
+
             if(statement!=null)
             {
-                statement.close();
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-        try {
+
+
             if(connection!= null)
             {
-                connection.close();
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
     }
 

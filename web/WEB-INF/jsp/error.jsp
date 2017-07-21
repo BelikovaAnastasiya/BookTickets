@@ -4,17 +4,17 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="styles/login.css" type="text/css">
+    <link rel="stylesheet" href="../../styles/login.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <title>Страница ошибки</title>
 </head>
 <body>
 <div id="wrapper">
     <header>
-        <img id="logo" src="images/logo2.png" alt="Logo">
+        <img id="logo" src="../../images/logo2.png" alt="Logo">
     </header>
     <section>
-        <img id="error" src="images/error.jpg" alt="Error">
+        <img id="error" src="../../images/error.jpg" alt="Error">
         <br>
         <h3> <%request.setCharacterEncoding("UTF-8");%>
             <%= request.getAttribute("error")%></h3>

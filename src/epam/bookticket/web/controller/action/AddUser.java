@@ -43,20 +43,21 @@ public class AddUser extends BaseController {
                 if (answer == true)
                 {
                     if(sessionAttribute == null) {
-                        request.getRequestDispatcher("/personalPage.jsp").forward(request, response);
+                        request.getRequestDispatcher("/WEB-INF/jsp/personalPage.jsp").forward(request, response);
                     }
                     else
                     {
-                        request.getRequestDispatcher("/personalPageAdmin.jsp").forward(request,response);
+                        request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp").forward(request,response);
                     }
                 }
                 else
                 {
                     request.setAttribute("error", "Uncorrect personal information!");
-                    request.getRequestDispatcher("/error.jsp").forward(request,response);
+                    request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
                 }
             } catch (ServiceException e) {
-                e.printStackTrace();
+                request.setAttribute("error", e.getMessage());
+                request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
             }
 
 
@@ -66,7 +67,7 @@ public class AddUser extends BaseController {
             if (sessionAttribute == null) {
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
             } else {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/personalPageAdmin.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp");
                 dispatcher.forward(request, response);
             }
         }
