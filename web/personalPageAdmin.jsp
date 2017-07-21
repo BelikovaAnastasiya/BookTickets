@@ -16,9 +16,10 @@
 <div id="wrapper">
   <header>
     <img id="logo" src="images/logo2.png" alt="Logo">
-    <form name="sign" action="index.jsp" method="get">
+    <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
       <%request.setCharacterEncoding("UTF-8");%>
       <h2>Вы зашли под записью: <%= session.getAttribute("adminname")%></h2>
+      <input type="hidden" name="controllerName" value="SignOut">
       <button name="button_sign">Выйти</button>
     </form>
   </header>

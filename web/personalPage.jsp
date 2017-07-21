@@ -17,7 +17,8 @@
 <div id="wrapper">
   <header>
     <img id="logo" src="images/logo2.png" alt="Logo">
-    <form name="sign" action="index.jsp" method="get">
+    <form name="sign" action="epam.bookticket.web.BaseServletController" method="get">
+      <input type="hidden" name="controllerName" value="SignOut">
       <button name="button_sign">Выйти</button>
     </form>
     <form name="search" action="epam.bookticket.web.BaseServletController" method="get">

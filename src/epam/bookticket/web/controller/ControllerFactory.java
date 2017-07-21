@@ -45,6 +45,7 @@ public class ControllerFactory {
         map.put("SeeBooking", SeeBooking.class);
         map.put("SeeReviews", SeeReviews.class);
         map.put("BookTicket", BookTicket.class);
+        map.put("SignOut", SignOut.class);
 
         ////
         return map;
