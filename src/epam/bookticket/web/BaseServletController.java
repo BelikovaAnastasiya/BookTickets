@@ -15,19 +15,19 @@ public class BaseServletController extends HttpServlet {
 
     public BaseServletController () {
         super();
+    }
+
+    @Override
+    public void init() throws ServletException {
         factory = new ControllerFactory();
     }
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try{
+
             String controllerName = req.getParameter("controllerName");
             BaseController baseController = factory.create(controllerName);
             baseController.execute(req,resp,req.getServletContext());
 
-        }catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-            e.printStackTrace();
-        }
     }
 }
