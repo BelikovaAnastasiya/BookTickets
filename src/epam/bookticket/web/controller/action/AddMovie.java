@@ -22,7 +22,7 @@ public class AddMovie extends BaseController {
         String name = (String)session.getAttribute("adminname");
         if(name == null)
         {
-            request.setAttribute("error", "You are not authentication user!");
+            request.setAttribute("error", "Вы не авторизированны!");
             request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
         }
         else
@@ -37,12 +37,12 @@ public class AddMovie extends BaseController {
                 try {
                     ServiceFactory serviceFactory = ServiceFactory.getInstance();
                     MovieService movieService = serviceFactory.getMovieService();
-                    Boolean answer = movieService.addMovie(movie);
+                    boolean answer = movieService.addMovie(movie);
 
-                    if (answer == true) {
+                    if (answer) {
                         request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp").forward(request, response);
                     } else {
-                        request.setAttribute("error", "Uncorrect information about this movie!");
+                        request.setAttribute("error", "Некорректная информация о фильме!");
                         request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
                     }
                 } catch (ServiceException e) {

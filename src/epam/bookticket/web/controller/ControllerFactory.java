@@ -49,6 +49,7 @@ public class ControllerFactory {
         map.put("SignIn", SignIn.class);
         map.put("PersonalPage", PersonalPage.class);
         map.put("AddMovieAdmin", AddMovieAdmin.class);
+        map.put("ChangeProfile", ChangeProfile.class);
 
         ////
         return map;

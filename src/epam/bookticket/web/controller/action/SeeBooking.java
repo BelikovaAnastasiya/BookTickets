@@ -31,7 +31,7 @@ public class SeeBooking extends BaseController {
 
             if (reservations.isEmpty())
             {
-                String message = "You don't have reservations!!!";
+                String message = "У вас отсутствуют заказы!";
                 request.setAttribute("error", message);
                 request.getRequestDispatcher("/WEB-INF/jsp/errorUser.jsp").forward(request,response);
             }

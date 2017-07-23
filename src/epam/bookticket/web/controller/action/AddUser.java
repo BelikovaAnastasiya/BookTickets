@@ -24,7 +24,7 @@ public class AddUser extends BaseController {
         if(request.getParameter("save")!=null)
         {
             request.setCharacterEncoding("UTF-8");
-            Boolean answer = false;
+            boolean answer = false;
             User user = new User();
             user.setIsAdmin(0);
             user.setLogin(request.getParameter("login"));
@@ -52,7 +52,7 @@ public class AddUser extends BaseController {
                 }
                 else
                 {
-                    request.setAttribute("error", "Uncorrect personal information!");
+                    request.setAttribute("error", "Некорректные персональные данные для сохранения!");
                     request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
                 }
             } catch (ServiceException e) {

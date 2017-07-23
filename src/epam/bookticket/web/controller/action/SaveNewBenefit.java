@@ -20,7 +20,7 @@ public class SaveNewBenefit extends BaseController {
         if(request.getParameter("save")!=null)
         {
             request.setCharacterEncoding("UTF-8");
-            Boolean answer;
+            boolean answer;
             Benefit benefit = new Benefit();
             benefit.setTypeBenefit(request.getParameter("title"));
             benefit.setSizeBenefit(Integer.valueOf(request.getParameter("size")));
@@ -35,7 +35,7 @@ public class SaveNewBenefit extends BaseController {
                 }
                 else
                 {
-                    request.setAttribute("error", "Some problems with saving!");
+                    request.setAttribute("error", "Возникли проблемы с сохранением!");
                     request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
                 }
             } catch (ServiceException e) {

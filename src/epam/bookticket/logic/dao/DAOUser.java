@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface DAOUser {
     String signIn(String login, String password) throws DAOException;
-    Boolean registration(User user)throws DAOException;
+    boolean registration(User user)throws DAOException;
     String takeProfileInformation(String login) throws DAOException;
-    void deleteUser(User user)throws DAOException;
-    void editInformationAboutUser(User user, String newInformation)throws DAOException;
+    boolean deleteUser(User user)throws DAOException;
+    boolean editInformationAboutUser(String login,String parametr, String newInformation)throws DAOException;
     List takeAllUsers()throws DAOException;
 }

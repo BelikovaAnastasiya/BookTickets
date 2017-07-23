@@ -26,10 +26,10 @@ public class SQLMovieDAO implements DAOMovie {
     }
 
     @Override
-    public Boolean addMovie(Movie movie) throws DAOException {
+    public boolean addMovie(Movie movie) throws DAOException {
         PreparedStatement preparedStatement = null;
         Connection connection = null;
-        Boolean response = false;
+        boolean response = false;
 
         try{
             connection = connectionPool.takeConnection();

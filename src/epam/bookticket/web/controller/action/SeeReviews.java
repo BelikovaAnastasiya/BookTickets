@@ -30,7 +30,7 @@ public class SeeReviews extends BaseController {
 
             if (reviews.isEmpty())
             {
-                String message = "No reviews for that user!";
+                String message = "Вы не оставляли отзывы на фильмы!";
                 request.setAttribute("error", message);
                 request.getRequestDispatcher("/WEB-INF/jsp/errorUser.jsp").forward(request,response);
             }

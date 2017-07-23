@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface DAOBenefit {
 
-    Boolean addBenefit(Benefit benefit) throws DAOException;
-    Boolean addBenefitToUser(Benefit benefit, User user) throws DAOException;
+    boolean addBenefit(Benefit benefit) throws DAOException;
+    boolean addBenefitToUser(Benefit benefit, User user) throws DAOException;
     List takeAllBenefits() throws DAOException;
-    Boolean deleteBenefit(String name) throws DAOException;
+    boolean deleteBenefit(String name) throws DAOException;
 
 }

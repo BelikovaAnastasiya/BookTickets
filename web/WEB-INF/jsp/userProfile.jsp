@@ -7,11 +7,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="../../styles/normalize.css">
-  <link rel="stylesheet" href="../../styles/stylesPersonal.css" type="text/css">
+  <link rel="stylesheet" href="../../styles/stylesAdd.css" type="text/css">
   <script src="../../js/jquery-3.2.1.js"></script>
   <script src="../../js/menu.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Kurale&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
   <title>Профиль</title>
+  <script>
+    var pokazatel_prosmotra = 0;
+
+    function change()
+    {
+      if (pokazatel_prosmotra == 0) {
+        var el =
+                '<html> <form name="formChange" id="change" action="epam.bookticket.web.BaseServletController" method="get" ><input type="hidden" name="controllerName" value="ChangeProfile"> <br>Выберите: <select name="param" required><option value="" disabled selected >Изменяемое поле</option><option value="login">Логин</option><option value="password">Пароль</option><option value="mail">E-mail</option><option value="name">Имя</option><option value="surname">Фамилия</option><option value="numberCreditCard">Номер карты</option><option value="phone">Телефон</option></select><p></p> Введите новое значение: <input name="value" type="text" required ><input type="submit" name="ch" value="Изменить"></form></html>';
+        $(el).appendTo("#info");
+        pokazatel_prosmotra = 1;
+      }
+      else
+      {
+        $('#info').remove();
+        pokazatel_prosmotra = 0;
+      }
+    }
+  </script>
 </head>
 <body>
 <div id="wrapper">
@@ -27,7 +45,7 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <form name="page" id="mainPage" action="epam.bookticket.web.BaseServletController" method="get">
+        <form name="form" id="mainPage" action="epam.bookticket.web.BaseServletController" method="get">
           <input type="hidden" name="controllerName" value="PersonalPage">
           <li><a href="#" onclick="mainPage()">Главная</a> </li>
         </form>
@@ -70,6 +88,11 @@
       <p>Телефон: <%=request.getAttribute("phone")%></p>
       <p>Размер скидки: <%=request.getAttribute("benefit")%>%</p>
       <hr>
+    <form name = "form" id="change" action="epam.bookticket.web.BaseServletController" method="get">
+      <input type="hidden" name="controllerName" value="ChangePage">
+      <input name="changeInf" type="button" onclick="change()" value="Изменить данные">
+      <div id="info"></div>
+    </form>
   </section>
 </div>
 <footer>

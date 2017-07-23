@@ -21,7 +21,7 @@ public class MyProfile extends BaseController {
         String name = (String)session.getAttribute("username");
         if(name == null)
         {
-            request.setAttribute("error", "You are not authentication user!");
+            request.setAttribute("error", "Вы не аутентифицированы!");
             request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
         }
         else {
@@ -49,7 +49,7 @@ public class MyProfile extends BaseController {
 
                     request.getRequestDispatcher("/WEB-INF/jsp/userProfile.jsp").forward(request, response);
                 } else {
-                    String message = "Error with profile information!!";
+                    String message = "Возникла ошибка с предоставлением ваших персональных данных!";
                     request.setAttribute("error", message);
                     request.getRequestDispatcher("/WEB-INF/jsp/errorUser.jsp").forward(request, response);
                 }

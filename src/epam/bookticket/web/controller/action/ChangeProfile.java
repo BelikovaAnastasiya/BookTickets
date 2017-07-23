@@ -1,6 +1,5 @@
 package epam.bookticket.web.controller.action;
 
-import epam.bookticket.logic.bean.User;
 import epam.bookticket.logic.service.UserService;
 import epam.bookticket.logic.service.exception.ServiceException;
 import epam.bookticket.logic.service.factory.ServiceFactory;
@@ -10,36 +9,33 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class SeeAllUsers extends BaseController {
+public class ChangeProfile extends BaseController {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
+
         request.setCharacterEncoding("UTF-8");
-        List<User> userList = new ArrayList<>();
+        HttpSession session = request.getSession();
+        String login = (String) session.getAttribute("username");
+        String changeParametr = request.getParameter("param");
+        String newValue = request.getParameter("value");
 
         try {
             ServiceFactory serviceFactory = ServiceFactory.getInstance();
             UserService userService = serviceFactory.getUserService();
-            userList = userService.takeUsers();
-
-            if (userList.isEmpty())
-            {
-                String message = "В системе нет Клиентов!";
-                request.setAttribute("error", message);
-                request.getRequestDispatcher("/WEB-INF/jsp/errorAdmin.jsp").forward(request,response);
-            }
-            else
-            {
-                request.setAttribute("users", userList);
-                request.getRequestDispatcher("/WEB-INF/jsp/allUsers.jsp").forward(request, response);
+            boolean result = userService.editInformationAboutUser(login, changeParametr, newValue);
+            if (result) {
+                request.getRequestDispatcher("/WEB-INF/jsp/personalPage.jsp").forward(request, response);
+            } else {
+                request.setAttribute("error", "Проблемы с измененем данных. Попробуйте позже!");
+                request.getRequestDispatcher("/WEB-INF/jsp/errorUser.jsp").forward(request, response);
             }
         } catch (ServiceException e) {
             request.setAttribute("error", e.getMessage());
-            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/jsp/errorUser.jsp").forward(request, response);
         }
     }
 }

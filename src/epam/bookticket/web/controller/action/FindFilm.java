@@ -31,7 +31,7 @@ public class FindFilm extends BaseController {
 
             if (movies.isEmpty())
             {
-                String message = "No movies with that title";
+                String message = "Ќе найдено фильмов с таким названием!";
                 request.setAttribute("error", message);
                 request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request,response);
             }

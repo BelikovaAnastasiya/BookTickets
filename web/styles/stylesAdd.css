@@ -79,6 +79,7 @@ input[type="submit"]
     width: 220px;
     font: 15px 'Kurale', serif;
     margin-top: 5%;
+    margin-left: 2%;
 }
 
 input[type="button"]
@@ -88,6 +89,8 @@ input[type="button"]
     color: #A52A2A;
     width: 220px;
     font: 15px 'Kurale', serif;
+    margin-left: 2%;
+
 }
 
 input[name="del"]
@@ -113,8 +116,24 @@ input[type="hidden"]
     margin: 0;
 }
 
-form {
+form[name="sign"]{
     float: right;
+}
+
+form[name="search"]{
+    float: right;
+}
+
+form[name="form"]{
+    float: left;
+}
+
+select{
+    background-color: #F5F5DC;
+    border: 2px solid #A52A2A;
+    color: #A52A2A;
+    width: 220px;
+    font: 15px 'Kurale', serif;
 }
 
 nav a {

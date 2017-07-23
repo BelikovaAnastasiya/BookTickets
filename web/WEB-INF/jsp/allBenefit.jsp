@@ -17,7 +17,7 @@
     function deleteForm()
     {
       if (pokazatel_prosmotra == 0) {
-        var el = '<html> <form name="form" id="delete" action="epam.web.BaseServletController" method="get" ><input type="hidden" name="controllerName" value="DeleteBenefit">Введите название скидки: <input name="procent" type="text" required ><input type="submit" name="del" value="Удалить"></form></html>';
+        var el = '<html> <form name="formdelete" id="delete" action="epam.bookticket.web.BaseServletController" method="get" ><input type="hidden" name="controllerName" value="DeleteBenefit">Введите название скидки: <input name="procent" type="text" required ><input type="submit" name="del" value="Удалить"></form></html>';
         $(el).appendTo("#info");
         pokazatel_prosmotra = 1;
       }
@@ -43,23 +43,27 @@
   <aside>
     <nav>
       <ul class="top-menu">
-        <form name="formAdd" id="adminAddUser" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="form" id="mainPage" action="epam.bookticket.web.BaseServletController" method="get">
+          <input type="hidden" name="controllerName" value="PersonalPage">
+          <li><a href="#" onclick="mainPage()">Главная</a> </li>
+        </form>
+        <form name="form" id="adminAddUser" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="AdminAddUser">
           <li><a href="#" onclick="adminAddUser()">Добавить клиента</a></li>
         </form>
-        <form name="formAll" id="seeAllUsers" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="form" id="seeAllUsers" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="SeeAllUsers">
           <li><a href="#" onclick="seeAllUsers()">Управление клиентами</a></li>
         </form>
-        <form name="formAddM" id="addMovieAdmin" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="form" id="addMovieAdmin" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="AddMovieAdmin">
           <li><a href="#" onclick="addMovieAdmin()">Добавить фильм</a></li>
         </form>
-        <form name="formChange" id="changeMovie" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="form" id="changeMovie" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="////">
           <li><a href="//">Изменить данные о фильмах</a></li>
         </form>
-        <form name="formBenefit" id="benefitSystem" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="form" id="benefitSystem" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BenefitSystem">
           <li><a href="#" onclick="benefitSystem()">Скидочная система</a></li>
         </form>

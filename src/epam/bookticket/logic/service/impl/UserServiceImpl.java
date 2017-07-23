@@ -11,6 +11,7 @@ import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
+
     @Override
     public String signIn(String login, String password) throws ServiceException {
 
@@ -24,7 +25,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean registration(User user) throws ServiceException {
+    public boolean registration(User user) throws ServiceException {
         try {
             DAOFactory daoFactoryObject = DAOFactory.getInstance();
             DAOUser daoUser = daoFactoryObject.getUserDAO();
@@ -63,8 +64,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String editInformationAboutUser(User user, String newInformation) throws ServiceException {
-
-        return "rht";
+    public boolean editInformationAboutUser(String login, String parametr, String newInformation) throws ServiceException {
+        try{
+            DAOFactory daoFactory = DAOFactory.getInstance();
+            DAOUser daoUser = daoFactory.getUserDAO();
+            return daoUser.editInformationAboutUser(login,parametr,newInformation);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
     }
+
 }

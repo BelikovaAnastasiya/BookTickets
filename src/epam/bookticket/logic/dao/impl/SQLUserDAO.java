@@ -64,10 +64,10 @@ public class SQLUserDAO implements DAOUser {
     }
 
     @Override
-    public Boolean registration(User user) throws DAOException {
+    public boolean registration(User user) throws DAOException {
         PreparedStatement preparedStatement = null;
         Connection connection = null;
-        Boolean response = null;
+        boolean response = false;
 
         try {
             connection = connectionPool.takeConnection();
@@ -130,14 +130,39 @@ public class SQLUserDAO implements DAOUser {
     }
 
     @Override
-    public void deleteUser(User user) throws DAOException {
-
+    public boolean deleteUser(User user) throws DAOException {
+        return false;
     }
 
     @Override
-    public void editInformationAboutUser(User user, String newInformation) throws DAOException {
+    public boolean editInformationAboutUser(String login, String parametr, String newInformation) throws DAOException {
+        boolean response = false;
+        PreparedStatement preparedStatement = null;
+        Connection connection = null;
 
+        try{
+            connection = connectionPool.takeConnection();
+            preparedStatement = connection.prepareStatement("UPDATE user SET " + parametr +" = ? WHERE login = ?");
+            preparedStatement.setString(1, newInformation);
+            preparedStatement.setString(2, login);
+            int result = preparedStatement.executeUpdate();
+
+            if(result == 1)
+            {
+                response = true;
+            }
+
+        } catch (ConnectionPoolException e) {
+            throw new DAOException("Can't open connection to database yo database",e);
+        } catch (SQLException e) {
+            throw new DAOException("Some problems with your query",e);
+        }
+        finally {
+            connectionPool.closeConnection(connection,preparedStatement);
+        }
+        return response;
     }
+
 
     @Override
     public List takeAllUsers() throws DAOException {

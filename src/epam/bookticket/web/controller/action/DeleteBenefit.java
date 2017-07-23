@@ -20,7 +20,7 @@ public class DeleteBenefit extends BaseController {
         try {
             ServiceFactory serviceFactory = ServiceFactory.getInstance();
             BenefitService benefitService = serviceFactory.getBenefitService();
-            Boolean result = benefitService.deleteBenefit(nameBenefit);
+            boolean result = benefitService.deleteBenefit(nameBenefit);
 
             if (result == true)
             {
@@ -28,7 +28,7 @@ public class DeleteBenefit extends BaseController {
             }
             else
             {
-                request.setAttribute("error", "Can't delete this benefit!");
+                request.setAttribute("error", "Данный тип скидки не был удален!");
                 request.getRequestDispatcher("/WEB-INF/jsp/errorAdmin.jsp").forward(request,response);
             }
         }catch (ServiceException e) {

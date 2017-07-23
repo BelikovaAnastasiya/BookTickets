@@ -26,6 +26,10 @@
   <aside>
     <nav>
       <ul class="top-menu">
+        <form name="page" id="mainPage" action="epam.bookticket.web.BaseServletController" method="get">
+          <input type="hidden" name="controllerName" value="PersonalPage">
+          <li><a href="#" onclick="mainPage()">Главная</a> </li>
+        </form>
         <form name="formAdd" id="adminAddUser" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="AdminAddUser">
         <li><a href="#" onclick="adminAddUser()">Добавить клиента</a></li>

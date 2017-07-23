@@ -25,8 +25,8 @@ public class SQLBenefitDAO implements DAOBenefit {
     }
 
     @Override
-    public Boolean addBenefit(Benefit benefit) throws DAOException {
-        Boolean response = false;
+    public boolean addBenefit(Benefit benefit) throws DAOException {
+        boolean response = false;
         PreparedStatement preparedStatement = null;
         Connection connection = null;
 
@@ -54,8 +54,8 @@ public class SQLBenefitDAO implements DAOBenefit {
     }
 
     @Override
-    public Boolean addBenefitToUser(Benefit benefit, User user) throws DAOException {
-        return null;
+    public boolean addBenefitToUser(Benefit benefit, User user) throws DAOException {
+        return false;
     }
 
     @Override
@@ -89,9 +89,9 @@ public class SQLBenefitDAO implements DAOBenefit {
     }
 
     @Override
-    public Boolean deleteBenefit(String name) throws DAOException {
+    public boolean deleteBenefit(String name) throws DAOException {
 
-        Boolean response = false;
+        boolean response = false;
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
