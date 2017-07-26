@@ -11,24 +11,21 @@ import java.util.List;
 
 public class ReviewServiceImpl implements ReviewService {
 
-    @Override
-    public void addReview(Review review) throws ServiceException {
 
+    @Override
+    public boolean addReview(Review review) throws ServiceException {
+        try{
+            DAOFactory daoFactory = DAOFactory.getInstance();
+            DAOReview daoReview = daoFactory.getReviewDAO();
+            return daoReview.addReview(review);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
     }
 
     @Override
-    public void deleteReview(Review review) throws ServiceException {
-
-    }
-
-    @Override
-    public void changeTextReview(Review review, String newText) throws ServiceException {
-
-    }
-
-    @Override
-    public void changeRatingReview(Review review, int newRating) throws ServiceException {
-
+    public boolean deleteReview(Review review) throws ServiceException {
+        return false;
     }
 
     @Override

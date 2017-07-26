@@ -50,6 +50,7 @@ public class ControllerFactory {
         map.put("PersonalPage", PersonalPage.class);
         map.put("AddMovieAdmin", AddMovieAdmin.class);
         map.put("ChangeProfile", ChangeProfile.class);
+        map.put("SaveReview", SaveReview.class);
 
         ////
         return map;

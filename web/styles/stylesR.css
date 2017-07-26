@@ -46,6 +46,16 @@ input {
 	margin: 0px 0px 5px 5px;
 }
 
+textarea{
+	background-color: #F5F5DC;
+	border: 2px solid #A52A2A;
+	color: #A52A2A;
+	font: 15px 'Kurale', serif;
+    width: 200px;
+	float: right;
+	margin: 0px 0px 5px 5px;
+}
+
 input[type="submit"]
 {
 	background-color: #F5F5DC;

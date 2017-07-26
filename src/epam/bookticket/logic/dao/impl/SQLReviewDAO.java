@@ -28,12 +28,59 @@ public class SQLReviewDAO implements DAOReview {
     }
 
     @Override
-    public void addReview(Review review) throws DAOException {
+    public boolean addReview(Review review) throws DAOException {
+        PreparedStatement preparedStatement = null;
+        Connection connection = null;
+        boolean answer = false;
+        boolean check = false;
+        int idUser = 0, idMovie = 0;
 
+        try{
+            connection = connectionPool.takeConnection();
+            preparedStatement = connection.prepareStatement("SELECT idUser FROM user WHERE login LIKE ?");
+            preparedStatement.setString(1, review.getLoginUser());
+            ResultSet resultSetUser = preparedStatement.executeQuery();
+            while (resultSetUser.next())
+            {
+                idUser = resultSetUser.getInt(1);
+            }
+
+            preparedStatement = connection.prepareStatement("SELECT idMovie FROM movie WHERE title LIKE ?");
+            preparedStatement.setString(1, review.getMovieTitle());
+            ResultSet resultSetMovie = preparedStatement.executeQuery();
+            while (resultSetMovie.next())
+            {
+                check = true;
+                idMovie = resultSetMovie.getInt(1);
+            }
+            if (check)
+            {
+                preparedStatement = connection.prepareStatement("INSERT INTO review(rating, textReview, idUser, idMovie) VALUES (?,?,?,?)");
+                preparedStatement.setInt(1,review.getRating());
+                preparedStatement.setString(2, review.getTextReview());
+                preparedStatement.setInt(3, idUser);
+                preparedStatement.setInt(4, idMovie);
+
+                int result = preparedStatement.executeUpdate();
+                if(result == 1)
+                {
+                    answer = true;
+                }
+            }
+        }catch (ConnectionPoolException e) {
+            throw new DAOException("Can't open connection to database yo database",e);
+        }catch(SQLException e){
+            throw new DAOException("Some problems with your query",e);
+        }
+        finally {
+            connectionPool.closeConnection(connection,preparedStatement);
+        }
+        return answer;
     }
 
     @Override
-    public void deleteReview(Review review) throws DAOException {
+    public boolean deleteReview(Review review) throws DAOException {
+        return false;
 
     }
 
