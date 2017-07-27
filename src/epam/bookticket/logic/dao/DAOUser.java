@@ -10,7 +10,7 @@ public interface DAOUser {
     String signIn(String login, String password) throws DAOException;
     boolean registration(User user)throws DAOException;
     String takeProfileInformation(String login) throws DAOException;
-    boolean deleteUser(User user)throws DAOException;
+    boolean deleteUser(String login)throws DAOException;
     boolean editInformationAboutUser(String login,String parametr, String newInformation)throws DAOException;
     List takeAllUsers()throws DAOException;
 }

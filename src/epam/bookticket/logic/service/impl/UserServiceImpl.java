@@ -36,9 +36,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String deleteUser(User user) throws ServiceException {
+    public boolean deleteUser(String login) throws ServiceException {
 
-        return "eg";
+        try{
+            DAOFactory daoFactory = DAOFactory.getInstance();
+            DAOUser daoUser = daoFactory.getUserDAO();
+            return daoUser.deleteUser(login);
+        }catch (DAOException e) {
+            throw new ServiceException(e);
+        }
     }
 
     @Override

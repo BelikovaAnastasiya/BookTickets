@@ -22,7 +22,7 @@ public class DeleteBenefit extends BaseController {
             BenefitService benefitService = serviceFactory.getBenefitService();
             boolean result = benefitService.deleteBenefit(nameBenefit);
 
-            if (result == true)
+            if (result)
             {
                 request.getRequestDispatcher("/WEB-INF/jsp/personalPageAdmin.jsp").forward(request, response);
             }

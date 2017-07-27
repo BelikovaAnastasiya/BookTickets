@@ -130,8 +130,30 @@ public class SQLUserDAO implements DAOUser {
     }
 
     @Override
-    public boolean deleteUser(User user) throws DAOException {
-        return false;
+    public boolean deleteUser(String login) throws DAOException {
+        boolean response = false;
+        PreparedStatement preparedStatement = null;
+        Connection connection = null;
+
+        try{
+            connection = connectionPool.takeConnection();
+            preparedStatement = connection.prepareStatement("DELETE FROM user WHERE login LIKE ?");
+            preparedStatement.setString(1, login);
+            int result = preparedStatement.executeUpdate();
+            if (result == 1)
+            {
+                response = true;
+            }
+
+        } catch (ConnectionPoolException e) {
+            throw new DAOException("Can't open connection to database yo database",e);
+        } catch (SQLException e) {
+            throw new DAOException("Some problems with your query",e);
+        }
+        finally {
+            connectionPool.closeConnection(connection,preparedStatement);
+        }
+        return response;
     }
 
     @Override
