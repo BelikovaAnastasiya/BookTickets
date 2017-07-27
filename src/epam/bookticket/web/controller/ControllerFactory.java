@@ -51,6 +51,8 @@ public class ControllerFactory {
         map.put("AddMovieAdmin", AddMovieAdmin.class);
         map.put("ChangeProfile", ChangeProfile.class);
         map.put("SaveReview", SaveReview.class);
+        map.put("ChangeUser", ChangeUser.class);
+        map.put("DeleteUser", DeleteUser.class);
 
         ////
         return map;

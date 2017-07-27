@@ -18,8 +18,7 @@
     function change()
     {
       if (pokazatel_prosmotra == 0) {
-        var el =
-                '<html> <form name="formChange" id="change" action="epam.bookticket.web.BaseServletController" method="get" ><input type="hidden" name="controllerName" value="ChangeProfile"> <br>Выберите: <select name="param" required><option value="" disabled selected >Изменяемое поле</option><option value="login">Логин</option><option value="password">Пароль</option><option value="mail">E-mail</option><option value="name">Имя</option><option value="surname">Фамилия</option><option value="numberCreditCard">Номер карты</option><option value="phone">Телефон</option></select><p></p> Введите новое значение: <input name="value" type="text" required ><input type="submit" name="ch" value="Изменить"></form></html>';
+        var el = '<html><form name="formChange" id="change" action="epam.bookticket.web.BaseServletController" method="get" ><input type="hidden" name="controllerName" value="ChangeProfile"> <br>Выберите: <select name="param" required><option value="" disabled selected >Изменяемое поле</option><option value="login">Логин</option><option value="password">Пароль</option><option value="mail">E-mail</option><option value="name">Имя</option><option value="surname">Фамилия</option><option value="numberCreditCard">Номер карты</option><option value="phone">Телефон</option></select><p></p> Введите новое значение: <input name="value" type="text" required ><input type="submit" name="ch" value="Изменить"></form></html>';
         $(el).appendTo("#info");
         pokazatel_prosmotra = 1;
       }

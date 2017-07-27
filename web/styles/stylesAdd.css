@@ -23,6 +23,15 @@ table {
     margin-top: 5%;
 }
 
+#tabl{
+    background-color: #F5F5DC;
+    color: #A52A2A;
+    position: relative;
+    left: 10%;
+    margin-top: 5%;
+
+}
+
 button{
     color: #A52A2A;
     background-color: #F5F5DC;
