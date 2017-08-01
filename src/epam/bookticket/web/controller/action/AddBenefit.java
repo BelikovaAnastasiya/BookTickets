@@ -15,6 +15,7 @@ public class AddBenefit extends BaseController {
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext)
             throws ServletException, IOException {
 
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String name = (String)session.getAttribute("adminname");
         if(name == null)

@@ -18,6 +18,8 @@ public class AddUser extends BaseController {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
+
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String sessionAttribute = (String)session.getAttribute("adminname");
 

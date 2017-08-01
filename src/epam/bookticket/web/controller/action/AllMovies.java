@@ -18,7 +18,8 @@ public class AllMovies extends BaseController {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+
+        response.setCharacterEncoding("UTF-8");
         List<Movie> movies = new ArrayList<Movie>();
 
         try {

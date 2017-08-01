@@ -1,12 +1,11 @@
 package epam.bookticket.logic.bean;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Reservation implements Serializable {
     private int idReservation;
-    private Date date;
-    private int price;
+    private String date;
+    private double price;
     private String numberOfTheChair;
     private int countTickets;
     private String cinemaTitle;
@@ -17,7 +16,7 @@ public class Reservation implements Serializable {
     public Reservation() {
     }
 
-    public Reservation(int idReservation, Date date, int price, String numberOfTheChair,
+    public Reservation(int idReservation, String date, double price, String numberOfTheChair,
                        int countTickets, String cinemaTitle, boolean isPaid, String movieTitle,
                        String loginUser) {
         this.idReservation = idReservation;
@@ -31,7 +30,7 @@ public class Reservation implements Serializable {
         this.loginUser = loginUser;
     }
 
-    public Reservation(Date date, int price, String numberOfTheChair,
+    public Reservation(String date, double price, String numberOfTheChair,
                        int countTickets, String cinemaTitle, boolean isPaid,
                        String movieTitle, String loginUser) {
         this.date = date;
@@ -52,19 +51,19 @@ public class Reservation implements Serializable {
         this.idReservation = idReservation;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -124,7 +123,7 @@ public class Reservation implements Serializable {
         Reservation that = (Reservation) o;
 
         if (idReservation != that.idReservation) return false;
-        if (price != that.price) return false;
+        if (Double.compare(that.price, price) != 0) return false;
         if (countTickets != that.countTickets) return false;
         if (isPaid != that.isPaid) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
@@ -139,9 +138,12 @@ public class Reservation implements Serializable {
 
     @Override
     public int hashCode() {
-        int result = idReservation;
+        int result;
+        long temp;
+        result = idReservation;
         result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + price;
+        temp = Double.doubleToLongBits(price);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (numberOfTheChair != null ? numberOfTheChair.hashCode() : 0);
         result = 31 * result + countTickets;
         result = 31 * result + (cinemaTitle != null ? cinemaTitle.hashCode() : 0);

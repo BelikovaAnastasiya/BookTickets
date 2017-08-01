@@ -16,7 +16,7 @@ public class ChangeUser extends BaseController {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
 
-        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         String login = request.getParameter("chUserName");
         String changeParametr = request.getParameter("param");
         String newValue = request.getParameter("value");

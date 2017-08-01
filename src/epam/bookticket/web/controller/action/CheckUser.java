@@ -16,7 +16,8 @@ public class CheckUser extends BaseController {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");/// подчинить русскую кодировку
+
+        response.setCharacterEncoding("UTF-8");
         String login = request.getParameter("user");
         String password =  request.getParameter("password");
         String answer = null;

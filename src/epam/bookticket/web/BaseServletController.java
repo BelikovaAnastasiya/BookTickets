@@ -25,6 +25,7 @@ public class BaseServletController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+            req.setCharacterEncoding("UTF-8");
             String controllerName = req.getParameter("controllerName");
             BaseController baseController = factory.create(controllerName);
             baseController.execute(req,resp,req.getServletContext());

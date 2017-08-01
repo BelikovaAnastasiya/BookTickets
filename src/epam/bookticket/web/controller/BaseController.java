@@ -20,7 +20,7 @@ public class BaseController {
 
     public void execute(HttpServletRequest request,  HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException
     {
-        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         request.getRequestDispatcher("/index.jsp").forward(request,response);
     }
 

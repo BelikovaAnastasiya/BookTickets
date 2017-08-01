@@ -14,6 +14,7 @@ public class SignOut extends BaseController {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
 
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String adminname = (String)session.getAttribute("adminname");
         String username = (String)session.getAttribute("username");

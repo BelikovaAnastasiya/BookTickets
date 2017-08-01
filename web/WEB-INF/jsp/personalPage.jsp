@@ -1,6 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page pageEncoding="UTF-8"%>
+<%request.setCharacterEncoding("UTF-8");%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -36,7 +37,7 @@
           <input type="hidden" name="controllerName" value="PersonalPage">
           <li><a href="#" onclick="mainPage()">Главная</a> </li>
         </form>
-        <form name="form" id="bookticket" action="epam.bookticket.web.BaseServletController" method="get" >
+        <form name="form" id="bookTicket" action="epam.bookticket.web.BaseServletController" method="get" >
           <input type="hidden" name="controllerName" value="BookTicket">
         <li><a href="#" onclick="bookTicket()">Заказать билет</a></li>
         </form>

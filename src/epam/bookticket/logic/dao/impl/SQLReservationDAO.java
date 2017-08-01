@@ -2,15 +2,12 @@ package epam.bookticket.logic.dao.impl;
 
 
 import epam.bookticket.logic.bean.Reservation;
+import epam.bookticket.logic.dao.DAOReservation;
 import epam.bookticket.logic.dao.connectionPool.ConnectionPool;
 import epam.bookticket.logic.dao.connectionPool.exception.ConnectionPoolException;
-import epam.bookticket.logic.dao.DAOReservation;
 import epam.bookticket.logic.dao.exception.DAOException;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,13 +26,58 @@ public class SQLReservationDAO implements DAOReservation {
 
 
     @Override
-    public String addReservation(Reservation reservation) throws DAOException {
-        return null;
+    public boolean addReservation(Reservation reservation) throws DAOException {
+        PreparedStatement preparedStatement = null;
+        Connection connection = null;
+        boolean answer = false;
+        int userId = 0;
+        int movieId = 0;
+
+        try{
+            connection = connectionPool.takeConnection();
+            preparedStatement = connection.prepareStatement("SELECT idUser FROM user WHERE login LIKE ?");
+            preparedStatement.setString(1, reservation.getLoginUser());
+            ResultSet resultSetUser = preparedStatement.executeQuery();
+            while (resultSetUser.next())
+            {
+                userId = resultSetUser.getInt(1);
+            }
+            preparedStatement = connection.prepareStatement("SELECT idMovie FROM movie WHERE title LIKE ?");
+            preparedStatement.setString(1, reservation.getMovieTitle());
+            ResultSet resultSetMovie = preparedStatement.executeQuery();
+            while (resultSetMovie.next())
+            {
+                movieId  = resultSetMovie.getInt(1);
+            }
+            preparedStatement = connection.prepareStatement("INSERT INTO reservation(date, price, numberOfTheChair, countTickets, cinemaTitle, idUser, idMovie, isPaid) VALUES (?,?,?,?,?,?,?,?)");
+            preparedStatement.setString(1, reservation.getDate());
+            preparedStatement.setDouble(2, reservation.getPrice());
+            preparedStatement.setString(3, reservation.getNumberOfTheChair());
+            preparedStatement.setInt(4, reservation.getCountTickets());
+            preparedStatement.setString(5, reservation.getCinemaTitle());
+            preparedStatement.setInt(6, userId);
+            preparedStatement.setInt(7, movieId);
+            preparedStatement.setBoolean(8, reservation.isPaid());
+            int result = preparedStatement.executeUpdate();
+            if(result == 1)
+            {
+                answer = true;
+            }
+
+        }catch (ConnectionPoolException e) {
+            throw new DAOException("Can't open connection to database yo database",e);
+        }catch(SQLException e){
+            throw new DAOException("Some problems with your query",e);
+        }
+        finally {
+            connectionPool.closeConnection(connection,preparedStatement);
+        }
+        return answer;
     }
 
     @Override
-    public String deleteReservation(Reservation reservation) throws DAOException {
-        return null;
+    public boolean deleteReservation(Reservation reservation) throws DAOException {
+        return false;
     }
 
     @Override
@@ -55,7 +97,7 @@ public class SQLReservationDAO implements DAOReservation {
                 Reservation reservation = new Reservation();
                 reservation.setMovieTitle(resultSet.getString(1));
                 reservation.setCinemaTitle(resultSet.getString(2));
-                reservation.setDate(resultSet.getDate(3));
+                reservation.setDate(String.valueOf(resultSet.getDate(3)));
                 reservation.setPrice(resultSet.getInt(4));
                 reservation.setNumberOfTheChair(resultSet.getString(5));
                 reservation.setCountTickets(resultSet.getInt(6));
@@ -72,10 +114,4 @@ public class SQLReservationDAO implements DAOReservation {
         }
         return reservations;
     }
-
-    @Override
-    public List takeAllReservation() throws DAOException {
-        return null;
-    }
-
 }

@@ -12,12 +12,21 @@ import java.util.List;
 public class ReservationServiceImpl implements ReservationService {
 
     @Override
-    public void addReservation(Reservation reservation) throws ServiceException {
-
+    public boolean addReservation(Reservation reservation) throws ServiceException {
+        try {
+            DAOFactory daoFactory = DAOFactory.getInstance();
+            DAOReservation daoReservation = daoFactory.getReservationDAO();
+            return  daoReservation.addReservation(reservation);
+        }
+        catch (DAOException e)
+        {
+            throw new ServiceException(e);
+        }
     }
 
     @Override
-    public void deleteReservation(Reservation reservation) throws ServiceException {
+    public boolean deleteReservation(Reservation reservation) throws ServiceException {
+        return false;
 
     }
 

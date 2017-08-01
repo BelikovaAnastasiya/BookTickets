@@ -18,7 +18,8 @@ public class SeeReviews extends BaseController {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+
+        response.setCharacterEncoding("UTF-8");
         List<Review> reviews = new ArrayList<Review>();
         try
         {

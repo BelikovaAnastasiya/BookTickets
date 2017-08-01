@@ -23,13 +23,22 @@ table {
     margin-top: 5%;
 }
 
-#tabl{
+#tab1{
     background-color: #F5F5DC;
     color: #A52A2A;
     position: relative;
     left: 10%;
     margin-top: 5%;
 
+}
+
+#tb2
+{
+    background-color: #F5F5DC;
+    color: #A52A2A;
+    position: relative;
+    left: 5%;
+    margin-top: 5%;
 }
 
 button{
@@ -120,7 +129,7 @@ input[name="del"]
     font: 15px 'Kurale', serif;
 }
 
-input[type="text"],[type="number"]
+input[type="text"],[type="number"],[type="date"]
 {
     background-color: #F5F5DC;
     border: 2px solid #A52A2A;
@@ -128,7 +137,6 @@ input[type="text"],[type="number"]
     width: 220px;
     font: 15px 'Kurale', serif;
 }
-
 
 
 input[type="hidden"]

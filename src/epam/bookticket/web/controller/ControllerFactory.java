@@ -53,6 +53,7 @@ public class ControllerFactory {
         map.put("SaveReview", SaveReview.class);
         map.put("ChangeUser", ChangeUser.class);
         map.put("DeleteUser", DeleteUser.class);
+        map.put("AddReservation", AddReservation.class);
 
         ////
         return map;

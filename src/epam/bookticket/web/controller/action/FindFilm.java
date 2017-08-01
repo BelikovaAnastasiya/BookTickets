@@ -19,7 +19,8 @@ public class FindFilm extends BaseController {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String sessionAttribute = (String)session.getAttribute("username");
         List<Movie> movies = new ArrayList<Movie>();

@@ -17,8 +17,10 @@ public class MyProfile extends BaseController {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
 
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession(false);
         String name = (String)session.getAttribute("username");
+
         if(name == null)
         {
             request.setAttribute("error", "Вы не аутентифицированы!");

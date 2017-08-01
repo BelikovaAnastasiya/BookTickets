@@ -12,6 +12,8 @@ import java.io.IOException;
 public class AddReview extends BaseController {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
+
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String name = (String)session.getAttribute("username");
         if(name == null)

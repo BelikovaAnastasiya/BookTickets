@@ -18,11 +18,11 @@ public class SaveReview extends BaseController{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
 
+        response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String name = (String)session.getAttribute("username");
 
         if (request.getParameter("save") != null) {
-            request.setCharacterEncoding("UTF-8");
             Review review = new Review();
             review.setMovieTitle(request.getParameter("title"));
             review.setLoginUser(name);
@@ -36,7 +36,7 @@ public class SaveReview extends BaseController{
                 if (answer) {
                     request.getRequestDispatcher("/WEB-INF/jsp/personalPage.jsp").forward(request, response);
                 } else {
-                    request.setAttribute("error", "������������ ����������!");
+                    request.setAttribute("error", "Невозможно сохранить отзыв. Проверьте введенную информацию!");
                     request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
                 }
             } catch (ServiceException e) {

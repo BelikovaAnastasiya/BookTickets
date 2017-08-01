@@ -12,7 +12,8 @@ public class AdminAddUser extends BaseController {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+
+        response.setCharacterEncoding("UTF-8");
         request.getRequestDispatcher("/WEB-INF/jsp/registration.jsp").forward(request,response);
     }
 }

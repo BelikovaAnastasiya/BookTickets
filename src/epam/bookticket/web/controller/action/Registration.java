@@ -14,6 +14,7 @@ public class Registration extends BaseController {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext) throws ServletException, IOException {
 
+        response.setCharacterEncoding("UTF-8");
         if (request.getParameter("login")!=null){
             CheckUser checkUser = new CheckUser();
             checkUser.execute(request,response,request.getServletContext());
